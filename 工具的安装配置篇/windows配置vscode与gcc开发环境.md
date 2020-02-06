@@ -9,7 +9,7 @@
 [安装方法参考1](https://www.jianshu.com/p/dc0fc5d8c900)
 [安装方法参考2](https://blog.csdn.net/itas109/article/details/99699807)
  ### 可能遇到的问题###
- vscode默认使用powershell作为终端输出,会出错,可以设置为系统cmd窗口  
+ vscode如果使用powershell作为终端输出,可能会出错,可以设置为系统cmd窗口  
 
 
 ## 4、vscode配置git##
