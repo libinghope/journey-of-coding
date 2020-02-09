@@ -54,7 +54,7 @@ int ArrayList<T>::reSize(int resize){
 template<typename T>
 int ArrayList<T>::add(T t){
     if(used_size >= size){
-        this->reSize(default_capacity)；
+        this->reSize(default_capacity);
     }else{
         tPtr[used_size] = t;
     }
@@ -78,6 +78,7 @@ int ArrayList<T>::insertByIndex(T t, int index){
     delete[] old_tPtr;
     old_tPtr = NULL;
     this->size += default_capacity;
-    ++this->used_size
+    ++this->used_size;
+    return 0;
 }
 #endif

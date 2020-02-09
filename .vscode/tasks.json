@@ -2,15 +2,17 @@
     "tasks": [
         {
             "type": "shell",
-            "label": "cl.exe build active file",
-            "command": "cl.exe",
+            "label": "g++.exe build active file",
+            "command": "C:\\MinGW\\bin\\g++.exe",
             "args": [
-                "/Zi",
-                "/EHsc",
-                "/Fe:",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "${file}"
-            ]
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
+            }
         }
     ],
     "version": "2.0.0"

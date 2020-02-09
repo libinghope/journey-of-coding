@@ -3,12 +3,9 @@
         {
             "name": "Win32",
             "includePath": [
-                "C:/Program Files (x86)/Windows Kits/8.1/Includeshared",
-                "C:/Program Files (x86)/Windows Kits/8.1/Includeum",
-                "C:/Program Files (x86)/Windows Kits/8.1/Include/winrt",
                 "${workspaceFolder}/**",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.10150.0/ucrt",
-                "${workspaceFolder}/${fileDirname}"
+                "${workspaceFolder}/fileDirname/**",
+                "C:/MinGW/include"
             ],
             "defines": [
                 "_DEBUG",
