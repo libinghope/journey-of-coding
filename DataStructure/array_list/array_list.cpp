@@ -1,3 +1,4 @@
+#include <iostream>
 #include "array_common.hpp"
 
 using namespace std;

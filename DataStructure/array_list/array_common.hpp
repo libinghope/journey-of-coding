@@ -2,12 +2,9 @@
 #define __ARRAY_COMMON_H__
 
 // C++实现类似java中的ArrayList
-
-#include <iostream>
 #include <string.h>
 
 template<typename T>
-
 class ArrayList{
     public:
         ArrayList();
