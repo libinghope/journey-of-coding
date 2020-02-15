@@ -1,9 +1,9 @@
 #include<stdlib.h>
 #include "fun.h"
-extern int max(int a, int b);
-int main(){
-    printf("test..%d..\n", max(99, 9));
-    system("pause");
 
-    return 0;
+int main(){
+	printf("比较大的数是: %d..\n", max(99, 9));
+	system("pause");
+ 
+	return 0;
 }
