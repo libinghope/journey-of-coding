@@ -5,6 +5,6 @@
 尽可能写的简单易懂，方便以后用到的时候查阅，  
 也希望能对后面要学习C++的同学能有所帮助。     
 
-开发环境 windows10, visual studio code, minGw  
+开发环境 windows10, visual studio code, minGw(win + visual studio也可以)  
 具体可参考：https://code.visualstudio.com/docs/cpp/config-msvc  
 
