@@ -5,6 +5,7 @@
 尽可能写的简单易懂，方便以后用到的时候查阅，  
 也希望能对后面要学习编程的同学能有所帮助。     
 
-开发环境 Win10, visual studio code, minGw(嫌麻烦用visual studio也可以)  
-具体可参考：https://code.visualstudio.com/docs/cpp/config-msvc  
+开发环境 Win10, visual studio code, minGw,   
+工具的选用看个人爱好,嫌麻烦用visual studio也可以    
 
+有什么问题或建议欢迎issue!
