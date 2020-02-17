@@ -1,5 +1,6 @@
-#include<iostream>
-
+//typeid是c++中才有的这里先提前认识下
+#include<iostream>//此时文件后缀如果是c，而不是是cpp，编译器提示有错
+using namespace std;
 #if 0
 struct  Person{
     char name[128];
@@ -29,7 +30,9 @@ void testTypeID(){
 
 
 int main(){
+    testTypeID();
 
+    
     system("pause");
     return 0;
 }
