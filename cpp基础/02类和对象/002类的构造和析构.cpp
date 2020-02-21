@@ -16,6 +16,7 @@
 #include<iostream>
 using namespace std;
 #include<string.h>
+#include<stdlib.h>
 class Person{
 public:
     //构造函数函数名和类名相同，没有返回值，不能有void，但可以有参数。
@@ -46,3 +47,20 @@ void test(){
 	Person person;
 	cout << person.pName << person.mTall << person.mMoney << endl;
 }
+
+
+int main(int arc, char* args[]){
+	test();
+	
+	system("pause");
+	return 0;
+}
+
+
+
+
+
+
+
+
+

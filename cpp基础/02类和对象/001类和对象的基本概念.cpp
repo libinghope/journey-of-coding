@@ -4,8 +4,9 @@ using namespace std;
 //1. 属性和行为合成一个整体
 //2. 访问控制，现实事物本身有些属性和行为是不对外开放
 class Person{
-//人具有的行为(函数)
+//人具有的行为(函数) 
 public:
+	
 	void Dese(){ cout << "我有钱，年轻，个子又高，就爱嘚瑟!" << endl;}
 //人的属性(变量)
 public:
@@ -26,3 +27,4 @@ int main(){
 
 	return EXIT_SUCCESS;
 }
+
