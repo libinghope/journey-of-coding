@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 冰 ~ 用来写字的地方
-subtitle: 写写学习编程的过程，有时记录下自己的心情
+title: 冰 ~ 写字的地方
+subtitle: 写写学习coding的历程，有时记也录下自己的心情
 description: ''
 keywords: 编程 cpp 博客 代码 数据结构 linux 源码 操作系统 算法导论
 author: bing
@@ -98,4 +98,6 @@ theme: maupassant
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+    type: git
+    repo: https://github.com/libinghope/journey-of-coding
+    branch: gh-pages

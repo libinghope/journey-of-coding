@@ -17,6 +17,18 @@ hexo clean
 echo "clean task is over......"
 echo "hexo-blog building......"
 hexo g
+
+#发布网站
+echo "hexo cleaning......"
+Run hexo clean 
+echo "hexo clean finished......"
+
+echo "hexo deploying......"
+hexo deploy
+echo "hexo deploy finished......"
+echo "everything is ok......"
+
+:<<!
 echo "正在复制web文件······"
 cd ..
 rm -r ../blog/*
@@ -30,4 +42,4 @@ git commit -m "$message"
 git push origin gh-pages
 
 echo "push origin->gh-pages success."
-
+！
