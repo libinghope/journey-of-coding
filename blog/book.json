@@ -1,10 +1,8 @@
 {
     "plugins": [
-        "github-buttons",
         "-lunr", 
         "-search", 
         "search-plus",
-        "splitter",
         "favicon",
         "donate"
     ],
