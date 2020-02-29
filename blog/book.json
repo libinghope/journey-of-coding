@@ -1,8 +1,9 @@
 {
     "plugins": [
         "github-buttons",
-        "tbfed-pagefooter",
-        "-lunr", "-search", "search-plus",
+        "-lunr", 
+        "-search", 
+        "search-plus",
         "splitter",
         "favicon",
         "donate"
@@ -17,20 +18,7 @@
             ],
             "size": "small"
         },
-        "tbfed-pagefooter": {
-            "copyright":"Copyright &copy yiqilai.work 2020",
-            "modify_label": "该文件修订时间：",
-            "modify_format": "YYYY-MM-DD HH:mm:ss"
-        },
-        "favicon": {
-            "shortcut": "assets/images/favicon.ico",
-            "bookmark": "assets/images/favicon.ico",
-            "appleTouch": "assets/images/apple-touch-icon.png",
-            "appleTouchMore": {
-                "120x120": "assets/images/apple-touch-icon-120x120.png",
-                "180x180": "assets/images/apple-touch-icon-180x180.png"
-            }
-        },
+
         "donate": {
             "wechat": "https://i.loli.net/2020/02/29/VOf8KpBSuILq21h.jpg",
             "alipay": "https://i.loli.net/2020/02/29/KzXRbOBQ93CrDo1.jpg",
