@@ -11,15 +11,15 @@ git commit -m "$message"
 git push origin master
 echo "主分支master提交完成......."
 
-cd blog
-echo "gitbook building......"
-gitbook build
-echo "正在复制_book文件······"
+cd hexo-blog
+echo "hexo-blog building......"
+hexo g
+echo "正在复制web文件······"
 cd ..
-rm -r ../_book/*
-\cp -R ./blog/_book/* ../_book
+rm -r ../blog/*
+\cp -R ./hexo-blog/public/* ../blog
 echo "复制_book完成"
-cd ../_book
+cd ../blog
 
 echo "提交gh-pages分支......"
 git add -A
