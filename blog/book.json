@@ -3,13 +3,11 @@
         "github-buttons",
         "tbfed-pagefooter",
         "-lunr", "-search", "search-plus",
-        "expandable-chapters",
         "splitter",
         "favicon",
         "donate"
     ],
     "pluginsConfig": {
-        "expandable-chapters":{},
         "github-buttons": {
             "repo": "libinghope/journey-of-coding",
             "types": [
