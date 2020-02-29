@@ -10,7 +10,7 @@
     ],
     "pluginsConfig": {
         "github-buttons": {
-            "repo": "zhangjikai/gitbook-use",
+            "repo": "libinghope/journey-of-coding",
             "types": [
                 "star",
                 "watch",
@@ -33,10 +33,10 @@
             }
         },
         "donate": {
-            "wechat": "https://sm.ms/image/HZEITpFfg1Uv9l5",
-            "alipay": "https://sm.ms/image/KzXRbOBQ93CrDo1",
+            "wechat": "https://i.loli.net/2020/02/29/VOf8KpBSuILq21h.jpg",
+            "alipay": "https://i.loli.net/2020/02/29/KzXRbOBQ93CrDo1.jpg",
             "title": "",
-            "button": "赏",
+            "button": "打赏",
             "alipayText": "支付宝打赏",
             "wechatText": "微信打赏"
         }
