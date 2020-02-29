@@ -3,10 +3,7 @@
 *.exe
 *.obj
 .vscode
-c基础/output
 build
-blog/_book
-blog/node_modules
 hexo-blog/DS_Store
 hexo-blog/Thumbs.db
 hexo-blog/db.json

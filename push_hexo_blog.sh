@@ -4,7 +4,7 @@ then
     echo "git commit message can't be empty!exit..."
     exit 1
 fi
-#首先提交主分支
+#提交主分支
 echo "开始提交主分支master......"
 git add -A
 git commit -m "$message"
@@ -12,6 +12,9 @@ git push origin master
 echo "主分支master提交完成......."
 
 cd hexo-blog
+echo "clean cache......"
+hexo clean
+echo "clean task is over......"
 echo "hexo-blog building......"
 hexo g
 echo "正在复制web文件······"
