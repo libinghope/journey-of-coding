@@ -16,6 +16,7 @@ echo "gitbook building......"
 gitbook build
 echo "正在复制_book文件······"
 cd ..
+rm -r ../_book/*
 \cp -R ./blog/_book/* ../_book
 echo "复制_book完成"
 cd ../_book
