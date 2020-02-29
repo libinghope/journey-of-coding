@@ -1,0 +1,8 @@
+*.pdb
+*.ilk
+*.exe
+*.obj
+.vscode
+c基础/output
+build
+blog/_book
