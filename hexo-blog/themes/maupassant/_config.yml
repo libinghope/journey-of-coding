@@ -64,7 +64,7 @@ post_copyright:
 
 menu:
   - page: home
-    directory: .
+    directory: 
     icon: fa-home
   - page: archive
     directory: archives/
