@@ -11,4 +11,3 @@ hexo-blog/*.log
 hexo-blog/node_modules
 hexo-blog/public/
 hexo-blog/deploy*/
-hexo-blog/themes/maupassant
