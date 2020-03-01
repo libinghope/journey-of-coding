@@ -27,17 +27,17 @@ valine: ## https://valine.js.org
   pageSize: 10 ## Number of comments per page.
   guest_info: nick,mail,link ## Attributes of reviewers.
 
-google_search: true ## Use Google search, true/false.
-baidu_search: false ## Use Baidu search, true/false.
+google_search: false ## Use Google search, true/false.
+baidu_search: true ## Use Baidu search, true/false.
 swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
 tinysou: ## Your tinysou_key, e.g. 4ac092ad8d749fdc6293
 self_search: false ## Use a jQuery-based local search engine, true/false.
 google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
-baidu_analytics: ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
+baidu_analytics: 3568baf0ea52551ecddb25d5e48e7b5a ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
 fancybox: true ## If you want to use fancybox please set the value to true.
 show_category_count: false ## If you want to show the count of categories in the sidebar widget please set the value to true.
 toc_number: true ## If you want to add list number to toc please set the value to true.
-shareto: false ## If you want to use the share button please set the value to true, and you must have hexo-helper-qrcode installed.
+shareto: true ## If you want to use the share button please set the value to true, and you must have hexo-helper-qrcode installed.
 busuanzi: false ## If you want to use Busuanzi page views please set the value to true.
 wordcount: false ## If you want to display the word counter and the reading time expected to spend of each post please set the value to true, and you must have hexo-wordcount installed.
 widgets_on_small_screens: false ## Set to true to enable widgets on small screens.
@@ -96,11 +96,13 @@ timeline:
   - num: 1
     word: 2014/06/12-Start
   - num: 2
-    word: 2014/11/29-XXX
+    word: 2015/11/29-XXX
   - num: 3
-    word: 2015/02/18-DDD
+    word: 2019/02/18-DDD
   - num: 4
     word: More
+
+catalog: !include
 
 # Static files
 js: js
