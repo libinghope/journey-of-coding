@@ -88,12 +88,12 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - links
 
 links:
-  - title: site-name1
-    url: http://www.example1.com/
-  - title: site-name2
-    url: http://www.example2.com/
-  - title: site-name3
-    url: http://www.example3.com/
+  - title: 友情链接1
+    url: \#
+  - title: 友情链接2
+    url: \#
+  - title: 友情链接3
+    url: \#
 
 timeline:
   - num: 1
