@@ -1,7 +1,6 @@
 ---
 title: hexo blog搭建好了
-top: 10
-permalink: 0.0
+permalink: "0.0"
 ---
 本来之前都是在简书写一些文章，但是有时候要有写一些代码放在github上，  
 在两者之间切换比较麻烦，也不太像是程序员的风格，然后迁移到了gitbook上，  

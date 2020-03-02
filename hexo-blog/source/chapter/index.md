@@ -5,7 +5,7 @@ comments: false
 ---
 
 * [Introduction](0.0)
-* [第一章 开发环境配置篇](1.0)
+* [第一章 开发环境配置篇](/journey-of-coding/1.0)
   * [1.1 sublime,WGestures配置超爽开发环境](1.1)
   * [1.2 minGW配置C/C++开发环境](1.2)
   * [1.3 MAC系统的使用方法](1.3)
