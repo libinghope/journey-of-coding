@@ -1,39 +1,10 @@
 ---
-title: Hello World
-top: true
+title: hexo blog搭建好了
+top: 10
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
-## Quick Start
-
-### Create a new post
-
-``` bash
-\$ hexo new "My New Post"
-```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-\$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-\$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-\$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+本来之前都是在简书写一些文章，但是有时候要有写一些代码放在github上，  
+在两者之间切换比较麻烦，也不太像是程序员的风格，然后迁移到了gitbook上，  
+但是gitbook更像是写文档说明的地方，不像是个人blog，然后又切换到hexo,  
+文章保存在github gh-pages分支。一开始hexo自带的主题很是不令人满意，  
+就又去折腾hexo主题了，大部分时间都浪费在了主题上，这样忙活了好几天，终于  
+弄好可以安心码字了。
