@@ -59,7 +59,7 @@ donate:
   paypal_url: ## Paypal URL, e.g. https://www.paypal.me/tufu9441
 post_copyright:
   enable: false ## If you want to display the copyright info after each post, please set the value to true and fill the following items on your need.
-  author: ## Your author name, e.g. tufu9441
+  author: lucky ## Your author name, e.g. tufu9441
   copyright_text: ## Your copyright text, e.g. The author owns the copyright, please indicate the source reproduced.
 
 menu:
@@ -68,7 +68,7 @@ menu:
     icon: fa-home
   - page: chapter
     directory: chapter
-    icon: fa-chapter
+    icon: fa-book
   - page: archive
     directory: archives/
     icon: fa-archive
