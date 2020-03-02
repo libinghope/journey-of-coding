@@ -66,6 +66,9 @@ menu:
   - page: home
     directory: .
     icon: fa-home
+  - page: chapter
+    directory: chapter
+    icon: fa-chapter
   - page: archive
     directory: archives/
     icon: fa-archive
