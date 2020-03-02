@@ -8,7 +8,7 @@ class Person{
 public:
 	Person(){
 		mAge = 20;
-        //先开辟空间在赋值，很傻x
+        //先开辟空间再赋值，很傻x
 		pName = (char*)malloc(strlen("john")+1);
 		strcpy(pName, "john");
 	}
@@ -40,5 +40,5 @@ int main(){
 	//释放person对象
 	free(person);
 
-	return EXIT_SUCCESS;
+	return 0;
 }
