@@ -4,7 +4,7 @@ message=$1
 push_blog=$2
 if [ -z "$message" ]
 then
-!commit message 不能为空
+#commit message 不能为空
     echo "git commit message can't be empty!exit..."
     exit 1
 fi
