@@ -43,7 +43,7 @@ int main(){
     //NULL是一个值为0的宏常量：
     #define NULL    ((void *)0)
 
-    //void *指针可以指向任意变量的内存空间：
+    //void *指针可以指向任意变量的内存空间：万能指针
     void *p5 = NULL;
 
 	int n = 10;
