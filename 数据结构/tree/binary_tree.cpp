@@ -25,7 +25,7 @@ void preOrderTraversal(BinaryTree *root)
     }
 }
 
-//非递归中序遍历 下面是前序和后序遍历的方法
+//非递归中序遍历 下面是前序和中序遍历的方法
 //使用链表栈存储树节点
 #include "../stack/link_stack.hpp"
 void notRecursiveTraversal(BinaryTreeNode *const root)
@@ -49,14 +49,11 @@ void notRecursiveTraversal(BinaryTreeNode *const root)
     }
 }
 
-//非递归后序遍历  后序遍历比较麻烦,一直搞了一天才写出来太扯淡了
+//非递归后序遍历  后序遍历比较麻烦,一直搞了一天才写出来,太扯淡了
 void notRecursiveTraversal2(BinaryTreeNode *const root)
 {
     LinkStack<BinaryTreeNode *> stack,s;
-    BinaryTreeNode *pCurrentNode = root;
-    BinaryTreeNode *pLastVisitNode = NULL;
     BinaryTreeNode *lastvisit = NULL;
-
     BinaryTreeNode *p = root;
     while (p || !s.isEmpty())
     {
@@ -122,7 +119,7 @@ int main()
     node6.pRight = NULL;
 
     notRecursiveTraversal(&root);
-    cout << "-------------------------------------" << endl;
+    cout << "------------------非递归后序遍历-------------------" << endl;
     notRecursiveTraversal2(&root);
 
     return 0;
