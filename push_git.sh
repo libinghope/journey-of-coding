@@ -1,4 +1,5 @@
 message=$1
+push_blog=$2
 if [ -z "$message" ]
 then
 !commit message 不能为空
@@ -12,6 +13,8 @@ git commit -m "$message"
 git push origin master
 echo "push master branch success."
 
+if [ -z "$push_blog"]#是否需要重新生成博客
+then
 cd hexo-blog
 echo "cleaning cache......"
 hexo clean
@@ -44,4 +47,5 @@ git commit -m "$message"
 git push origin gh-pages
 
 echo "publish blog success. Go and to see your website."
+fi
 
