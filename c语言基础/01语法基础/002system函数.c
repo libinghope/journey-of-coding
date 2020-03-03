@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*linux系统中system函数位于 <stdlib.h>中(windows不需要头文件)
+/*linux系统中system函数位于 <stdlib.h>中(windows不需要头文件),mac没有pause指令
 原型: int system(const char *command);
 功能：在已经运行的程序中执行另外一个外部程序
 参数：外部可执行程序名字

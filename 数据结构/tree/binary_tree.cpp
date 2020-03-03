@@ -66,6 +66,8 @@ void notRecursiveTraversal2(BinaryTreeNode *const root)
         {
             p = s.pop();//一直向左下角走到最后一个
             s.push(p);
+            //这个时候的p的左孩子节点肯定是 (没有或者已经访问过)
+            //如果p没有右孩子节点，或者已经访问过右孩子，则访问之
             if (!p->pRight || p->pRight == lastvisit)
                 {
                     s.pop();
