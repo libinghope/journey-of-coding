@@ -64,15 +64,15 @@ void notRecursiveTraversal2(BinaryTreeNode *const root)
         }
         else
         {
-            p = s.pop();
+            p = s.pop();//一直向左下角走到最后一个
             s.push(p);
             if (!p->pRight || p->pRight == lastvisit)
                 {
                     s.pop();
                     cout << p->data<<endl;
-                    lastvisit = p; //访问完后有清理工作
-                    p = 0;
-                    continue;
+                    lastvisit = p;//记标记
+                    p = NULL;
+                    continue;//从头再来，继续出栈
                 }
             p = p->pRight;
         }
