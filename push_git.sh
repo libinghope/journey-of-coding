@@ -1,5 +1,5 @@
 message=$1
-no_push_blog=$2
+push_blog=$2
 if [ -z "$message" ]
 then
 !commit message 不能为空
@@ -12,8 +12,8 @@ git add -A
 git commit -m "$message"
 git push origin master
 echo "push master branch success."
-#是否需要重新生成博客
-if [ -z "$no_push_blog" ]
+#是否需要重新生成博客,默认不生成
+if [ $push_blog ]
 then
 cd hexo-blog
 echo "cleaning cache......"
