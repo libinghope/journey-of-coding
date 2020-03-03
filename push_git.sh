@@ -1,4 +1,6 @@
+# 参数一 commit时候的message
 message=$1
+# 参数二 是否要重新generate hexo-blog,非空即为真
 push_blog=$2
 if [ -z "$message" ]
 then

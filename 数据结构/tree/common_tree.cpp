@@ -10,10 +10,10 @@ typedef struct _common_tree_node{
 } CommonTreeNode;
 
 
-void visit(CommonTreeNode  *root){
+void traversal(CommonTreeNode  *root){
     if(!root){return;}
-    visit(root->first_child);
-    visit(root->next_sibling);
+    traversal(root->first_child);
+    traversal(root->next_sibling);
     
-    cout<< root->data;
+    cout<< root->data<<endl;
 }
