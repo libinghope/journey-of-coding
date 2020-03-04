@@ -10,28 +10,28 @@ class ArrayList{
         ArrayList();
         ~ArrayList();
         int add(T t);
-        T getByIndex(int index);
-        int insertByIndex(T t, int index);
-        // int modifyByIndex(int index, T const value);
-        // T search();
-        int reSize(int size = 10);
+        T get(int index);
+        int insert(T t, int index);
+        inline unsigned getLength(){return this->length;}
+        int reSize(int reSize = 10);
     private:
         T *tPtr;
-        unsigned int size;
-        unsigned int used_size = 0;
-        unsigned int default_capacity = 10;
+        unsigned int length;//对外显示的长度
+        unsigned int size;//实际开辟的空间长度
+        static unsigned int default_capacity = 10;//第一次默认开辟的空间长度
 };
 
 template<typename T>
 ArrayList<T>::ArrayList(){
     this->tPtr = new T[default_capacity];
     size = default_capacity;
+    length = 0;
 }
 
 template<typename T>
 ArrayList<T>::~ArrayList(){
     if(this->tPtr){
-        delete[] this->tPtr;
+        delete[] tPtr;
         tPtr = NULL;
     }
 }
@@ -60,12 +60,12 @@ int ArrayList<T>::add(T t){
 }
 
 template<typename T>
-T ArrayList<T>::getByIndex(int index){
+T ArrayList<T>::get(int index){
     return tPtr[index];
 }
 
 template<typename T>
-int ArrayList<T>::insertByIndex(T t, int index){
+int ArrayList<T>::insert(T t, int index){
     T* new_tPtr = new T[this->size + default_capacity];
     memcpy(new_tPtr, tPtr, sizeof(T) * index);
     memcpy(&new_tPtr[index+1], &tPtr[index], sizeof(T) * (size-index));
