@@ -46,7 +46,7 @@ cd ../blog
 echo "git push origin gh-pages......"
 git add -A
 git commit -m "$message"
-git push origin gh-pages
+git push -f origin gh-pages
 
 echo "publish blog success. Go and to see your website."
 fi
