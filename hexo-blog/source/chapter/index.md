@@ -22,4 +22,5 @@ comments: false
   * [3.1系统启动画面的背后](/journey-of-coding/3.1)
   * [3.2系统启动设置setup.s](/journey-of-coding/3.2)
   * [3.3操作系统接口](/journey-of-coding/3.3)
-  * [3.3操作系统接口的调用过程](/journey-of-coding/3.4)
+  * [3.4操作系统接口的调用过程](/journey-of-coding/3.4)
+  * [3.5管理CPU的直观想法](/journey-of-coding/3.5)

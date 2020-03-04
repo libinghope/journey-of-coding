@@ -71,7 +71,7 @@ int LinkList<T>::insert(T t, int index)
 {
     if (index > -1 && index < length)
     {
-        LinkListNode<T> *new_node = new LinkListNode<T>;
+        LinkListNode<T> *new_node = new LinkListNode<T>(t);
         LinkListNode<T> *p = head;
         int i = 0;
         while (i < index)
