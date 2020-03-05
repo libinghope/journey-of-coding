@@ -9,6 +9,7 @@ comments: false
   * [1.1 sublime,WGestures配置超爽开发环境](/journey-of-coding/1.1)
   * [1.2 minGW配置C/C++开发环境](/journey-of-coding/1.2)
   * [1.3 MAC系统的使用方法](/journey-of-coding/1.3)
+  * [1.4 MAC系统搭建bochs调试linux0.11](/journey-of-coding/1.4)
 
 * [第二章 生产力工具之必备技能篇](/journey-of-coding/2.0)
   * [2.1 markdwon常用语法](/journey-of-coding/2.1)
@@ -24,3 +25,4 @@ comments: false
   * [3.3操作系统接口](/journey-of-coding/3.3)
   * [3.4操作系统接口的调用过程](/journey-of-coding/3.4)
   * [3.5管理CPU的直观想法](/journey-of-coding/3.5)
+  * [3.6多进程图像](/journey-of-coding/3.6)
