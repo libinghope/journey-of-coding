@@ -1,22 +1,22 @@
-#ifndef __LINK_LIST_H__
-#define __LINK_LIST_H__
+#ifndef __LINKED_LIST_H__
+#define __LINKED_LIST_H__
 
 template <typename T>
-class LinkListNode
+class LinkedListNode
 {
 public:
-    LinkListNode() {}
-    LinkListNode(T t) { this->t = t; }
+    LinkedListNode() {}
+    LinkedListNode(T t) { this->t = t; }
     T t;
-    LinkListNode *next;
+    LinkedListNode *next;
 };
 
 template <typename T>
-class LinkList
+class LinkedList
 {
 public:
-    LinkList();
-    ~LinkList();
+    LinkedList();
+    ~LinkedList();
     void add(T t);
     T get(int index);
     int insert(T t, int index);
@@ -29,35 +29,37 @@ private:
 };
 
 template <typename T>
-LinkList<T>::LinkList()
+LinkedList<T>::LinkedList()
 {
-    head = new LinkListNode<T>;
+    head = new LinkedListNode<T>;
     tag = head;
     length = 0;
 }
 
 template <typename T>
-LinkList<T>::~LinkList()
+LinkedList<T>::~LinkedList()
 {
     while (head->next)
     {
-        delete head;
-        head = head->next;
+        LinkedListNode * p = head->next->next;
+        delete head->next;
+        head->next = p;
     }
+    delete head;
 }
 
 template <typename T>
-void LinkList<T>::add(T t)
+void LinkedList<T>::add(T t)
 {
-    tag->next = new LinkListNode<T>(t);
+    tag->next = new LinkedListNode<T>(t);
     tag = tag->next;
 }
 
 template <typename T>
-T LinkList<T>::get(int index)
+T LinkedList<T>::get(int index)
 {
     int i = 0;
-    LinkListNode<T> *p = head;
+    LinkedListNode<T> *p = head;
     while (i < index)
     {
         i++;
@@ -67,12 +69,12 @@ T LinkList<T>::get(int index)
 }
 
 template <typename T>
-int LinkList<T>::insert(T t, int index)
+int LinkedList<T>::insert(T t, int index)
 {
     if (index > -1 && index < length)
     {
-        LinkListNode<T> *new_node = new LinkListNode<T>(t);
-        LinkListNode<T> *p = head;
+        LinkedListNode<T> *new_node = new LinkedListNode<T>(t);
+        LinkedListNode<T> *p = head;
         int i = 0;
         while (i < index)
         {
