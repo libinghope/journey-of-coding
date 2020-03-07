@@ -26,3 +26,5 @@ comments: false
   * [3.5管理CPU的直观想法](/journey-of-coding/3.5)
   * [3.6多进程图像](/journey-of-coding/3.6)
   * [3.7用户级线程](/journey-of-coding/3.7)
+  * [3.8内核级线程](/journey-of-coding/3.8)
+  * [3.9操作系统概念功能和目标](/journey-of-coding/3.9)
