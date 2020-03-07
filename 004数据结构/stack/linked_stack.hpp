@@ -3,24 +3,24 @@
 #include<iostream>
 
 template<typename T>
-class LinkStackNode
+class LinkedStackNode
 {
     public:
-    LinkStackNode<T>(){}
-    LinkStackNode<T>(T _t){ t = _t; }
+    LinkedStackNode<T>(){}
+    LinkedStackNode<T>(T _t){ t = _t; }
     T t;
-    LinkStackNode* next;
+    LinkedStackNode* next;
 };
 template<typename T>
-class LinkStack{
+class LinkedStack{
     public:
-    LinkStack<T>(){
-        top = new LinkStackNode<T>();
+    LinkedStack<T>(){
+        top = new LinkedStackNode<T>();
         top->next = NULL;
     }
 
-    ~LinkStack(){
-        LinkStackNode<T>* p = NULL;
+    ~LinkedStack(){
+        LinkedStackNode<T>* p = NULL;
         while (top->next){
             p = top->next;
             top->next = top->next->next;
@@ -31,7 +31,7 @@ class LinkStack{
     }
 
     T pop(){
-        LinkStackNode<T>* p = top->next;
+        LinkedStackNode<T>* p = top->next;
         if(p){
             top->next = top->next->next;
             return p->t;
@@ -41,11 +41,11 @@ class LinkStack{
         
     void push(T t){
         if(!top->next){
-            top->next = new LinkStackNode<T>(t);
+            top->next = new LinkedStackNode<T>(t);
             return;
         }
-        LinkStackNode<T> * p = top->next;
-        top->next = new LinkStackNode<T>(t);
+        LinkedStackNode<T> * p = top->next;
+        top->next = new LinkedStackNode<T>(t);
         top->next->next = p;
     }
 
@@ -54,7 +54,7 @@ class LinkStack{
     }
 
     private:
-    LinkStackNode<T>* top;
+    LinkedStackNode<T>* top;
 };
 
 #endif

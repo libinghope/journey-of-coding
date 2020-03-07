@@ -4,6 +4,7 @@
 
 /*
 队列: 数据从尾部进入，头部取出
+这里使用的是动态数组实现方法,出队一个元素，后面的全部向前移动一下
 */
 template <typename T>
 class ArrayQueue
