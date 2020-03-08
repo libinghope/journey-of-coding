@@ -9,6 +9,7 @@ comments: false
   * [1.1 sublime,WGestures配置超爽开发环境](/journey-of-coding/1.1)
   * [1.2 minGW配置C/C++开发环境](/journey-of-coding/1.2)
   * [1.3 MAC系统的使用方法](/journey-of-coding/1.3)
+  * [1.4 代码编辑工具vscode插件推荐](/journey-of-coding/1.4)
 
 * [第二章 生产力工具之必备技能篇](/journey-of-coding/2.0)
   * [2.1 markdwon常用语法](/journey-of-coding/2.1)
