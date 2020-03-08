@@ -9,7 +9,7 @@ typedef struct _common_tree_node{
 
 } CommonTreeNode;
 
-
+//以数组的方式存储，旋转90度就是二叉树
 void traversal(CommonTreeNode  *root){
     if(!root){return;}
     traversal(root->first_child);
