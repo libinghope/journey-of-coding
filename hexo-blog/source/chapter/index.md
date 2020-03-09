@@ -29,3 +29,5 @@ comments: false
   * [3.7用户级线程](/journey-of-coding/3.7)
   * [3.8内核级线程](/journey-of-coding/3.8)
   * [3.9操作系统概念功能和目标](/journey-of-coding/3.9)
+  * [3.10系统调用](/journey-of-coding/3.10)
+  * [3.11内核级线程的切换](/journey-of-coding/3.11)
