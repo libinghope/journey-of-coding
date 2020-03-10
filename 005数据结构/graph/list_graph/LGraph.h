@@ -7,8 +7,8 @@ enum GraphType
 {
     DG,//有向图
     UG,//无向图
-    DN,//有向网图
-    UN //无向网图
+    DN,//有向网(带权)图
+    UN //无向网(带权)图
 };
 
 typedef struct Edge{
@@ -43,7 +43,7 @@ public:
     void DFS_LGraph();
     //广度优先遍历全图
     void BFS_LGraph();
-    //从点v出发，递归地深度优先遍历图
+    //从点v出发，递归地深度优先遍历
     void DFSFromVertex(int v);
 
 private:

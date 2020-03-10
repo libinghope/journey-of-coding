@@ -7,8 +7,8 @@ enum GraphType
 {
     DG,//有向图
     UG,//无向图
-    DN,//有向网图
-    UN //无向网图
+    DN,//有向网图(边有权重)
+    UN //无向网图(边有权重)
 };
 
 typedef struct Edge{
@@ -22,6 +22,10 @@ public:
     MGraph(GraphType type, int vertexNum);
     ~MGraph();
     void insertEdge(PtrEdge edge);
+    //迪杰斯特拉算法
+    void dijkstra(VertexType v0,int *P,int *D);
+    //弗洛伊德算法
+    void floyd(int *P[], int *D[]);
 
 private:
     VertexType Vertices[MaxVertexNum];                //用来存放顶点
