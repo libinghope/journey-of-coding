@@ -1,7 +1,7 @@
 //用邻接表来表示图
 #define MaxVertexNum 100 // 最大顶点数为100
 typedef int WeightType;  // 边的权重假定为整型
-typedef char VertexType; // 顶点用字符表示
+typedef int VertexType;  // 顶点用整型表示
 
 enum GraphType
 {
@@ -19,7 +19,7 @@ typedef struct Edge{
 typedef struct EdgeNode
 {
     VertexType   vertex;   //顶点
-    struct EdgeNode *next;     //指向下一个邻接点的指针域
+    struct EdgeNode *next; //指向下一个邻接点的指针域
     WeightType   weight;   //权重
 } Node, *PrtEdgeNode;
 
@@ -37,7 +37,7 @@ class LGraph
 public:
     LGraph(GraphType type, int vertexNum);
     ~LGraph();
-    void insert(PtrEdge pEdge);
+    void insertEdge(PtrEdge pEdge);
 private:
     AdjList  adjlist;          //邻接表
     int      vertexNum;        //顶点数

@@ -21,6 +21,7 @@ int arr[] = {1,3,4,10,12,13,15}
 BinaryTree createHuffmanTree(){
     BinaryTree minnode= new BinaryTreeNode(arr[0]);
 
+    //每次取出一个最小的，和minnode值加在一起组成根节点
     for(int i=0;i<sizeof(arr)/sizeof(int);i++){
         BinaryTree node = new BinaryTreeNode(arr[i+1]);
         new_data = minnode.data + arr[i+1];

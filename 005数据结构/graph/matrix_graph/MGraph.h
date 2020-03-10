@@ -1,7 +1,7 @@
 //使用邻接表来表示图
-#define MaxVertexNum 100 // 最大顶点数设为100
-#define INFINITY 65535   // 无穷大设为双字节无符号整数的最大值65535
-typedef char VertexType; //顶点类型设为字符型
+#define MaxVertexNum 100 //最大顶点数设为100
+#define INFINITY 65535   //无穷大设为双字节无符号整数的最大值65535
+typedef int VertexType;  //顶点类型设为整型
 typedef int WeightType;  //边的权重假定为整型
 enum GraphType
 {
