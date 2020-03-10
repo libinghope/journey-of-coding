@@ -45,6 +45,10 @@ public:
         return _t;
     }
 
+    bool empty(){
+        return head->next == nullptr;
+    }
+
 private:
     int length = 0;
     _node *head = nullptr;

@@ -39,5 +39,59 @@ void LGraph::insertEdge(PtrEdge pEdge){
     //再连接“头结点”与新节点(边的节点)
     this->adjlist[pEdge->v2].firstEdge = _newNode;
     }
+}
 
+//深度优先遍历全图
+void LGraph::DFS_LGraph(){
+    int i;
+    for ( i = 0; i < this->vertexNum; i++ )
+        visited[ i ] = false;  //确保开始前都没访问过 
+
+    for ( i = 0; i < this->vertexNum; i++ ){
+        if (!visited[i]) // 若i未被访问过
+            DFSFromVertex(i); // 从i开始DFS搜索一个连通分量
+    }
+
+}
+
+//从点v出发，深度优先递归遍历图(连通分量)
+void LGraph::DFSFromVertex(VertexType v){
+	EdgeNode *edge;
+
+    visitVertex(v);//访问之
+	for(edge = adjlist[v].firstEdge;  edge;  edge = edge->next ) 
+		if ( !visited[edge->vertex] )
+			DFSFromVertex(edge->vertex);//遍历之
+}
+
+//广度优先遍历全图
+#include "queue/linked_queue.hpp"//需要借助前面写的队列进行遍历
+void LGraph::BFS_LGraph(){
+    VertexType i,j;
+    PrtEdgeNode k;
+    LinkedQueue<VertexType> queue;
+    for ( i = 0; i < this->vertexNum; i++ ){
+        visited[ i ] = false;  //确保开始前都没访问过 
+    }
+    for ( i = 0; i<this->vertexNum; ++i )
+    if (!visited[i] ) { //没有访问过
+        visitVertex(i);  //访问之 
+        queue.enqueue(i);//入队
+        while (!queue.empty()) {
+            j = queue.dequeue();  //出队一个
+            for( k = adjlist[j].firstEdge;  k;  k = k->next )
+                if ( !visited[k->vertex] ) {
+                    visitVertex(k->vertex); 
+                    queue.enqueue(k->vertex);//入队
+                }
+        } 
+    } 
+}
+
+
+
+void LGraph::visitVertex(VertexType v){
+    //  TODO
+    //暂时不需要其他操作
+    visited[v] = true; 
 }

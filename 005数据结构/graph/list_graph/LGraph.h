@@ -1,7 +1,7 @@
 //用邻接表来表示图
 #define MaxVertexNum 100 // 最大顶点数为100
 typedef int WeightType;  // 边的权重假定为整型
-typedef int VertexType;  // 顶点用整型表示
+typedef int VertexType;  // 为了方便顶点也用整型表示
 
 enum GraphType
 {
@@ -37,10 +37,24 @@ class LGraph
 public:
     LGraph(GraphType type, int vertexNum);
     ~LGraph();
+    //插入边
     void insertEdge(PtrEdge pEdge);
+    //深度优先遍历全图
+    void DFS_LGraph();
+    //广度优先遍历全图
+    void BFS_LGraph();
+    //从点v出发，递归地深度优先遍历图
+    void DFSFromVertex(int v);
+
+private:
+    //访问顶点 v  
+    void visitVertex(VertexType v);
+
 private:
     AdjList  adjlist;          //邻接表
     int      vertexNum;        //顶点数
     int      edgeNum;          //边数 
     enum GraphType gType;      //类型
+    //是否访问过标志
+    bool  visited[MaxVertexNum] = {false};
 };
