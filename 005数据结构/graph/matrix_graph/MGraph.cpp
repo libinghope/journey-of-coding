@@ -19,11 +19,12 @@ void MGraph::insertEdge(PtrEdge edge)
     {
         Edges[edge->v2][edge->v1] = edge->weight;
     }
+    this->edgeNum += 1;
 }
 
 //迪杰斯特拉算法 求顶点v0到其他点的最短路径P[]和路径长度D[]
 void MGraph::dijkstra(int v0, int *P, int *D)
-{   //算法核心是：1、广度优先搜索计算v0到所有邻接点的距离，取距离最小的那个点Vmin放入集合S，
+{ //算法核心是：1、广度优先搜索计算v0到所有邻接点的距离，取距离最小的那个点Vmin放入集合S，
     //          2、对Vmin进行第一步的算法
     //          3、重复1 2 步骤 直到所有点都在集合S，或者再也找不到联通点
     //这里默认是有向带权无环图 而且权重不能有负值
@@ -64,8 +65,8 @@ void MGraph::dijkstra(int v0, int *P, int *D)
     }
 }
 
-void MGraph::floyd (int *P[],  int *D[])
-{   /*求有向网G中各对顶点v和w之间的最短路径P[v][w]及其带权长度D[v][w] */
+void MGraph::floyd(int *P[], int *D[])
+{ /*求有向网G中各对顶点v和w之间的最短路径P[v][w]及其带权长度D[v][w] */
     /*若P[v][w]=u，代表u是从v到w的最短路径必经的顶点。
     核心思想：初始矩阵D(其实就是图邻接矩阵)，最开始D[i][j]代表不用任何点作为中介到达所有点的距离，到自己0，不连通为∞
     1、首先只允许经过第0个点V[0]，如果经过V[0]的中转，使得D[i][j]变短的话，就更新D[i][j]的值为D[i][0]+D[0][j],
@@ -74,19 +75,70 @@ void MGraph::floyd (int *P[],  int *D[])
        使得D[i][j]变短的话，继续更新D[i][j]和P[i][j]，此时D就变成了只允许经过V[0]V[1]两个点的情况下任意两点最短距离
     3、以此类推 0,1,2,3...直到最后一个点V[n-1],矩阵D中就是点与点之间最短路径的值了
     */
-	int u, v, w, i;
+    int u, v, w, i;
 
-	for( v = 0; v < this->vertexNum; ++v ) /* 各对顶点之间初始已知路径及距离 */
-		for( w = 0; w < this->vertexNum; ++w ) {
-			D[v][w] = this->Edges [v][w];
-	        P[v][w] = v;  /* 假设从v到w有直接路径*/
-		}/*如果不存在直接的边，D[v][w] = ∞，P[v][w] = v也不会混淆*/
-		for( u = 0; u < this->vertexNum; ++u )
-			for( v = 0; v < this->vertexNum; ++v )
-				for( w = 0; w < this->vertexNum; ++w )
-					if ( D[v][u] + D[u][w] < D[v][w] ) {
-						/*从v经u到w的一条路径更短*/
-						D[v][w] = D[v][u] + D[u][w];
-						P[v][w] = u;
-					}
+    for (v = 0; v < this->vertexNum; ++v) /* 各对顶点之间初始已知路径及距离 */
+        for (w = 0; w < this->vertexNum; ++w)
+        {
+            D[v][w] = this->Edges[v][w];
+            P[v][w] = v; /* 假设从v到w有直接路径*/
+        }                /*如果不存在直接的边，D[v][w] = ∞，P[v][w] = v也不会混淆*/
+    for (u = 0; u < this->vertexNum; ++u)
+        for (v = 0; v < this->vertexNum; ++v)
+            for (w = 0; w < this->vertexNum; ++w)
+                if (D[v][u] + D[u][w] < D[v][w])
+                {
+                    /*从v经u到w的一条路径更短*/
+                    D[v][w] = D[v][u] + D[u][w];
+                    P[v][w] = u;
+                }
+}
+
+//* Pareent 表示每个顶点的父节点的最小生成树存于数组Parent中
+void MGraph::prim(int Parent[])
+{   /* 默认从序号为0的顶点出发 */
+    int LowCost[MaxVertexNum];
+    int i, j, k;
+
+    for (i = 1; i < vertexNum; i++)
+    { /* 初始化 */
+        LowCost[i] = this->Edges[0][i];
+        Parent[i] = 0; /*暂且认为所有顶点的父节点是 0（根结点）*/
+    }
+    LowCost[0] = 0; /* 从序号为0的顶点出发生成最小生成树 */
+    Parent[0] = -1; /* 生成树的根节点 */
+    for (i = 1; i < vertexNum; i++)
+    {                                    /* 生长成最小生成树还需要收集n-1个结点 */
+        k = findMin(LowCost, vertexNum); /* 求V－VT中到VT最小距离的点k*/
+        if (k)
+        {                              /* 如果找到 */
+            LowCost[k] = 0;            /*  生长至顶点k  */
+            for (j = 1; j < vertexNum; j++) /* 更新当前最小生成树*/
+                if (LowCost[j] && this->Edges[k][j] < LowCost[j])
+                {
+                    /* 如果j是V－VT中的顶点且距离需要更新 */
+                    LowCost[j] = this->Edges[k][j]; /* 更新最小距离  */
+                    Parent[j] = k;               /*  暂且认为顶点j的父结点是 k  */
+                }                                /* 结束if需要更新j */
+        }                                        /* 结束if找到下一个k */
+        else
+        { /* 还没收集完所有结点就不能继续生长，一定为非连通图 */
+            //printf("图不连通");
+            break;
+        }
+    }
+}
+
+int MGraph::findMin(int LowCost[], int n)
+{ /* 求V－VT中到VT最小距离的点 */
+    int j, k, MinCost = INFINITY;
+
+    for (k = 0, j = 0; j < n; j++)
+        if (LowCost[j] && LowCost[j] < MinCost)
+        {
+            MinCost = LowCost[j];
+            k = j;
+        }
+
+    return k;
 }

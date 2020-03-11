@@ -26,11 +26,16 @@ public:
     void dijkstra(VertexType v0,int *P,int *D);
     //弗洛伊德算法
     void floyd(int *P[], int *D[]);
+    //最小生成树 普里姆算法
+    void prim(int Parent[]);
 
 private:
-    VertexType Vertices[MaxVertexNum];                //用来存放顶点
+    //求V－VT中到VT最小距离的点
+    int findMin(int LowCost[], int n);
+
+private:
     WeightType Edges[MaxVertexNum][MaxVertexNum]={0}; //邻接矩阵，即边表
     int vertexNum;                                    //顶点个数
     int edgeNum;                                      //边的个数 
-    enum GraphType GType;                             //图的类型分4种：UG、DG、UN、DN */
+    enum GraphType GType;                             //图的类型ß
 };

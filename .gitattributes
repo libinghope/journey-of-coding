@@ -1,4 +1,0 @@
-*.c linguist-language=c
-*.cpp linguist-language=c++
-*.html linguist-language=html
-*.md linguist-language=markdown
