@@ -1,5 +1,5 @@
 /*计数排序
-排序好的序号在sorted_arr
+排序好的结果存放在sorted_arr
 */
 
 void countSort(int *A, int N,int *sorted_arr)
