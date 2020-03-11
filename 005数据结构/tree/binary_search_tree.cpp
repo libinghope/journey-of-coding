@@ -56,12 +56,12 @@ BSTree* BSTreeDelete(BSTree *bstree,int data){
             //1、取左子树的最大值
             //2、取右子树最小值
             BSTree *tmp = cur_node;
-            BStree * rt = cur_node->pRight;
+            BSTree * rt = cur_node->pRight;
             while (rt->pLeft)//这里取右子树最小值
             {
-                rt = rt->pleft;
+                rt = rt->pLeft;
             }
-            BStree tmprt = *rt;
+            BSTree tmprt = *rt;
             cur_node = &tmprt;//右子树最小节点替换要删除的结点
             free_node(rt);//切断右子树最小值与父节点的关联
             free_node(tmp);//释放目标节点 

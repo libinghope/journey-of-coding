@@ -24,9 +24,9 @@ void MGraph::insertEdge(PtrEdge edge)
 
 //迪杰斯特拉算法 求顶点v0到其他点的最短路径P[]和路径长度D[]
 void MGraph::dijkstra(int v0, int *P, int *D)
-{ //算法核心是：1、广度优先搜索计算v0到所有邻接点的距离，取距离最小的那个点Vmin放入集合S，
-    //          2、对Vmin进行第一步的算法
-    //          3、重复1 2 步骤 直到所有点都在集合S，或者再也找不到联通点
+{   //核心: 1、广度优先搜索计算v0到所有邻接点的距离，取距离最小的那个点Vmin放入集合S，
+    //     2、从S中取出Vmin,对Vmin进行第一步的算法
+    //     3、重复1 2 步骤 直到所有点都在集合S，或者再也找不到联通点
     //这里默认是有向带权无环图 而且权重不能有负值
     int Final[MaxVertexNum], v, w, i, j, min;
 
@@ -141,4 +141,31 @@ int MGraph::findMin(int LowCost[], int n)
         }
 
     return k;
+}
+
+//获取所有的顶点的入度，存放在数组inDegree中
+//默认inDegree已经初始化 全部为0
+void MGraph::getInDegree(int *inDegree)
+{   //以有向无权图为例
+    for(int i=0;i<vertexNum;i++){
+        //邻接矩阵存储，只需要计算第i行有多少不为0的值
+        for(int j=0;j<vertexNum;j++){
+            if(0 != Edges[i][j]){
+                inDegree[i]++;
+            }
+        }
+    }
+}
+
+//获取顶点v所有的邻接点
+//默认V已经初始化为全0
+void MGraph::getAllAdjVertex(VertexType v, int V[]){
+//以有向无权图为例
+    for(int j=0;j<vertexNum;j++){
+        //邻接矩阵存储，只需要计算第i列有多少不为0的值
+        for(int i=0;i<vertexNum;i++){
+            //有向无权图 要么0(不连通)要么1(连通)
+            V[i] = Edges[i][j];
+        }
+    }
 }

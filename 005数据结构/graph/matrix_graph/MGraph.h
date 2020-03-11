@@ -28,7 +28,12 @@ public:
     void floyd(int *P[], int *D[]);
     //最小生成树 普里姆算法
     void prim(int Parent[]);
+    //计算所有顶点的入度
+    void getInDegree(int *inDegree);
+    //获取顶点V所有的邻接点
+    void getAllAdjVertex(VertexType v, int V[]);
 
+    inline int getVertexNum(){return this->vertexNum;}
 private:
     //求V－VT中到VT最小距离的点
     int findMin(int LowCost[], int n);
