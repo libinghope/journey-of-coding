@@ -16,7 +16,7 @@ private:
 	Printer(){ mTimes = 0; }//构造函数私有化
 	Printer(const Printer&){}//拷贝构造也要私有化，确保外部无法生成对象实例
 private:
-	static Printer* pPrinter;//在编译时候就已经有了
+	static Printer* pPrinter;//在编译时候就已经有了(也可以定义成全局静态变量)
 	int mTimes;//pPrinter只有一个，所以mTimes也只能有一个了
 };
 
