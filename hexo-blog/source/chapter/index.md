@@ -32,3 +32,7 @@ comments: false
   * [3.10系统调用](/journey-of-coding/3.10)
   * [3.11内核级线程的切换](/journey-of-coding/3.11)
   * [3.12内核级线程的代码实现](/journey-of-coding/3.12)
+  * [3.13操作系统那棵树](/journey-of-coding/3.13)
+  * [3.14CPU调度策略](/journey-of-coding/3.14)
+  * [3.15调度函数schedule的功能](/journey-of-coding/3.15)
+  * [3.16进程同步与信号量](/journey-of-coding/3.16)
