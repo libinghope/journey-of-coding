@@ -36,3 +36,5 @@ comments: false
   * [3.14CPU调度策略](/journey-of-coding/3.14)
   * [3.15调度函数schedule的功能](/journey-of-coding/3.15)
   * [3.16进程同步与信号量](/journey-of-coding/3.16)
+* [第四章 软件架构](/journey-of-coding/4.0)
+  * [4.1架构的概念](/journey-of-coding/4.1)
