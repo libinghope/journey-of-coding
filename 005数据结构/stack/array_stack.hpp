@@ -36,10 +36,12 @@ class ArrayStack{
     bool isEmpty(){
         return -1 == top;
     }
+    inline int size(){return size;}
 
     private:
     T * pArr;
     int top; 
+    int size;
 };
 
 #endif

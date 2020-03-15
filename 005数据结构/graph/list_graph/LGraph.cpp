@@ -56,12 +56,12 @@ void LGraph::DFS_LGraph(){
 
 //从点v出发，深度优先递归遍历图(连通分量)
 void LGraph::DFSFromVertex(VertexType v){
-	EdgeNode *edge;
+    EdgeNode *edge;
 
     visitVertex(v);//访问之
-	for(edge = adjlist[v].firstEdge;  edge;  edge = edge->next ) 
-		if ( !visited[edge->vertex] )
-			DFSFromVertex(edge->vertex);//遍历之
+    for(edge = adjlist[v].firstEdge;  edge;  edge = edge->next ) 
+        if ( !visited[edge->vertex] )
+            DFSFromVertex(edge->vertex);//遍历之
 }
 
 //广度优先遍历全图
@@ -79,6 +79,8 @@ void LGraph::BFS_LGraph(){
         queue.enqueue(i);//入队
         while (!queue.empty()) {
             j = queue.dequeue();  //出队一个
+            
+            //把所有与j邻接的点入队
             for( k = adjlist[j].firstEdge;  k;  k = k->next )
                 if ( !visited[k->vertex] ) {
                     visitVertex(k->vertex); 
