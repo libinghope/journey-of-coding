@@ -41,3 +41,4 @@ comments: false
 * [第四章 软件架构](/journey-of-coding/4.0)
   * [4.1架构的概念](/journey-of-coding/4.1)
   * [4.2软件架构的历史背景和目的](/journey-of-coding/4.2)
+  * [4.3高性能带来的软件复杂度](/journey-of-coding/4.3)
