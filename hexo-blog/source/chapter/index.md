@@ -42,3 +42,4 @@ comments: false
   * [4.1架构的概念](/journey-of-coding/4.1)
   * [4.2软件架构的历史背景和目的](/journey-of-coding/4.2)
   * [4.3高性能带来的软件复杂度](/journey-of-coding/4.3)
+  * [4.4高可用带来的软件复杂度](/journey-of-coding/4.4)
