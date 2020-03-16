@@ -5,7 +5,7 @@ comments: false
 ---
 
 * [序言](/journey-of-coding/0.0)
-* [第一章 开发环境配置篇](/journey-of-coding/1.0)
+* [第一章 软件环境和工具篇](/journey-of-coding/1.0)
   * [1.1 sublime,WGestures配置超爽开发环境](/journey-of-coding/1.1)
   * [1.2 minGW配置C/C++开发环境](/journey-of-coding/1.2)
   * [1.3 MAC系统的使用方法](/journey-of-coding/1.3)
@@ -36,5 +36,8 @@ comments: false
   * [3.14CPU调度策略](/journey-of-coding/3.14)
   * [3.15调度函数schedule的功能](/journey-of-coding/3.15)
   * [3.16进程同步与信号量](/journey-of-coding/3.16)
+  * [3.17信号量的临界区保护](/journey-of-coding/3.17)
+  * [3.18内存使用与分段](/journey-of-coding/3.18)
 * [第四章 软件架构](/journey-of-coding/4.0)
   * [4.1架构的概念](/journey-of-coding/4.1)
+  * [4.2软件架构的历史背景和目的](/journey-of-coding/4.2)
