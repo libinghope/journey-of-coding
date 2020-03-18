@@ -40,6 +40,7 @@ comments: false
   * [3.18内存使用与分段](/journey-of-coding/3.18)
   * [3.19内存分区与分页](/journey-of-coding/3.19)
   * [3.20分段与分页结合的实际内存管理](/journey-of-coding/3.20)
+  * [3.21内存的换入换出](/journey-of-coding/3.21)
 * [第四章 软件架构](/journey-of-coding/4.0)
   * [4.1架构的概念](/journey-of-coding/4.1)
   * [4.2软件架构的历史背景和目的](/journey-of-coding/4.2)
