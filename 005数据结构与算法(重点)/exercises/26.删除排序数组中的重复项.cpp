@@ -64,7 +64,16 @@
 using namespace std;
 class Solution {
 public:
+    //看了别人的代码，才发现自己的方法多愚蠢
     int removeDuplicates(vector<int>& nums) {
+        int i = !nums.empty();
+        for (int n : nums)
+            if (n > nums[i-1])
+                nums[i++] = n;
+        return i;
+    }
+    //自己写的蠢代码
+    int removeDuplicates2(vector<int>& nums) {
         int i,j,k;
         int cur_size = nums.size();
         //{1,1,2,3,3,4,5}
