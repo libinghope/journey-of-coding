@@ -4,7 +4,7 @@ using namespace std;
 
 class Person{
 public:
-	//类的静态成员属性
+	//类的静态成员属性,在执行main函数之前就已经初始化
 	static int sNum;
 private:
 	static int sOther;
@@ -18,6 +18,11 @@ private:
 //类外初始化，初始化时不加static
 int Person::sNum = 0;
 int Person::sOther = 0;
+/*
+C++11标准针规定了局部静态变量初始化需要保证线程安全，具体说明如下：
+If control enters the declaration concurrently while the variable is being initialized, 
+the concurrent execution shall wait for completion of the initialization
+*/
 int main(){
 	//1. 通过类名直接访问
 	Person::sNum = 100;
