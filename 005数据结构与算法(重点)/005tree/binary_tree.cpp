@@ -27,7 +27,7 @@ void preOrderTraversal(BinaryTree *root)
 
 //非递归中序遍历 下面是前序和中序遍历的方法
 //使用链表栈存储树节点
-#include "../stack/linked_stack.hpp"
+#include "../003stack/linked_stack.hpp"
 void notRecursiveTraversal(BinaryTreeNode *const root)
 {
     LinkedStack<BinaryTreeNode *> stack;
