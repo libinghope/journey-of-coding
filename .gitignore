@@ -3,6 +3,7 @@
 *.exe
 *.obj
 .vscode
+tmp
 build
 hexo-blog/DS_Store
 hexo-blog/Thumbs.db
