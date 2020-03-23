@@ -1,3 +1,0 @@
-# 软件架构
-
-相关内容已经迁移到个人博客第四章 ["软件架构"](https://libinghope.github.io/journey-of-coding/chapter/)
