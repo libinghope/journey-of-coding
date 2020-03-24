@@ -13,7 +13,7 @@
 # system to read them from there before the area is overwritten
 # for buffer-blocks.
 #
-
+# setup.s文件已在操作系统课程中注释过(https://libinghope.github.io/journey-of-coding/3.2)
 # NOTE! These had better be the same as in bootsect.s!
 
 	.equ INITSEG, 0x9000	# we move boot here - out of the way
