@@ -24,8 +24,8 @@ struct HashTbl
 {
     public:
     HashTbl(int TableSize);
-    Position Find(ElementType Key, HashTable H);
-    void InsertAndCount(ElementType Key, HashTable H);
+    Position Find(ElementType Key);
+    void InsertAndCount(ElementType Key);
     void DestroyTable();
 
     private:

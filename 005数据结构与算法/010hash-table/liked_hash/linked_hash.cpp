@@ -32,7 +32,7 @@ HashTable HashTbl::InitializeTable(int TableSize)
     }
 }
 
-Position HashTbl::Find(ElementType Key, HashTable H)
+Position HashTbl::Find(ElementType Key)
 {
     Position P;
     List L;
@@ -45,7 +45,7 @@ Position HashTbl::Find(ElementType Key, HashTable H)
     return P;
 }
 
-void HashTbl::InsertAndCount(ElementType Key, HashTable H)
+void HashTbl::InsertAndCount(ElementType Key)
 {
     Position Pos, NewCell;
     List L;
