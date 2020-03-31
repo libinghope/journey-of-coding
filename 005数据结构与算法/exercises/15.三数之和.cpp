@@ -32,11 +32,73 @@
  * 
  * 
  */
+#include<vector>
+using namespace std;
 
 // @lc code=start
+typedef vector<int> vector_int;
 class Solution {
 public:
-vector<vector<int> > threeSum(vector<int>& nums) {
+    /*分析过程
+    要求三数之和，对于集合A中的每个元素n来说，所有要找的结果，只有两种情况，包括n的和不包括n的
+    
+    包括a[0]的和不包括a[0]的所有情况加在一起就是答案
+    不包括a[0]的，就是a[1],a[2]···a[len-1]的所有符合答案的情况
+    而a[1],a[2]···a[len-1],又可以分为包括a[1]的和不包括a[1]的
+    ···以此类推直到最后
+    
+    包括a[0]的，令start=a[1],end=a[len-1],向中间收缩求解
+    包括a[1]的，因为之前已经计算过包括a[0]的,肯定已经计算过包括a[0]和a[1]的，，所以不能再计算包括a[0]的，
+    start 要从a[2]开始
+    同样当计算包括a[2]的解的时候，已经计算过包括a[0],a[2]| a[1],a[2]的，start要从a[3]开始
+    */
+    vector<vector<int> > threeSum(vector<int> &nums){
+        vector<vector_int> res;
+        int len = nums.size();
+        if(len<3) return res;
+        sort(nums.begin(),nums.end());
+
+        int start = 0;
+        int end = 0;
+        for(int i=0;i<len-2;++i){
+            if(i>0 && nums[i] == nums[i-1]){//去重
+                continue;
+            }
+            start = i+1;
+            end = len - 1;
+            while(start<end){
+                if(nums[i]+nums[start]+nums[end] == 0){
+                    vector<int> vectmp;
+                    vectmp.push_back(nums[i]);
+                    vectmp.push_back(nums[start]);
+                    vectmp.push_back(nums[end]);
+                    res.push_back(vectmp);
+                    //向中间收缩
+                    ++start;
+                    while(end>start && start>i && nums[start]==nums[start-1]){
+                        ++start;
+                    }
+                    --end;
+                    while(start<end && end < len-1 && nums[end]==nums[end+1]){
+                        --end;
+                    }
+                }else if(nums[i]+nums[start]+nums[end] > 0){
+                    //大了，需要调小，start和end不能回退到原来状态(会重复)，所以只能end调小
+                    --end;
+                    while(start<end && end < len-1 && nums[end]==nums[end+1]){
+                        --end;
+                    }
+                }else{
+                    ++start;
+                    while(end>start && start>i && nums[start]==nums[start-1]){
+                        ++start;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    vector<vector<int> > threeSum1(vector<int>& nums) {
         vector<vector<int> > ret;
         vector<int > vtemp;
         int len = nums.size();
