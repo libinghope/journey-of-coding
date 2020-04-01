@@ -70,10 +70,14 @@ using namespace std;
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
-        int i = !nums.empty();
-        for(int n : nums){
-            if(n==val){
-                nums[i++] = n;
+        if(nums.empty()) return 0;
+        int i = 0;
+        for(int j=0;j<nums.size();++j){
+            if(nums[j]==val){
+                if(nums.size()-1==j) return i;
+                nums[i] = nums[j+1];
+            }else{
+                nums[i++] = nums[j];
             }
         }
         return i;
