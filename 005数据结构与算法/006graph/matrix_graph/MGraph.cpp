@@ -41,7 +41,7 @@ void MGraph::dijkstra(int v0, int *P, int *D)
     D[v0] = 0;
     Final[v0] = true; /* 初始状态：v0顶点属于S集 */
 
-    /*开始主循环，每次求得v0到某个v 顶点的最短路径，并加v到集 */
+    /*开始主循环，每次求得v0到某个v 顶点的最短路径，并加v到集合P */
     for (i = 1; i < vertexNum; ++i)
     {
         min = INFINITY; /* min为当前所知离v0顶点的最近距离 */
