@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main0401() {
+func main03701() {
 	s := []int{1, 2, 3, 4, 5}
 	//切片名[起始下标:]
 	//slice:=s[2:]
@@ -15,7 +15,7 @@ func main0401() {
 	fmt.Println(cap(slice))
 	fmt.Println(slice)
 }
-func main() {
+func main03702() {
 	s := []int{1, 2, 3, 4, 5}
 	//slice:=s[2:4]//[1 2]
 	//

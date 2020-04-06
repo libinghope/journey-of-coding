@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main0401() {
+func main03002() {
 
 	//var 变量名 数据类型
 
@@ -16,7 +16,7 @@ func main0401() {
 	//arr[1]=10
 
 	//数组下标是从0开始的  到数组下标的最大值为数组元素个数-1
-	var arr [10]int = [10]int{1,2,3,4,5,6,7,8,9,10}
+	var arr [10]int = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 
 	//fmt.Println(arr[0])
 	//fmt.Println(arr[1])
@@ -39,33 +39,32 @@ func main0401() {
 	//	fmt.Println(arr[i])
 	//}
 
-
 	//range 遍历集合信息
 	//返回值为 下标  值
-	for _,v:=range arr  {
+	for _, v := range arr {
 		fmt.Println(v)
 	}
 }
 
-func main0402(){
+func main0402() {
 	//数组在定义时 可以初始化部分元素的值
 	//var arr [10]int=[10]int{1,2,3,4,5}
 	//使用自动类型推导创建数组
 	//arr:=[10]int{1,2,3,4,5,6,7,8,9,10}
 
 	//使用自动类型推导 可以根据元素个数创建数组
-	arr:=[...]int{1,2,3}
+	arr := [...]int{1, 2, 3}
 
-	for _,v:=range arr  {
+	for _, v := range arr {
 		fmt.Println(v)
 	}
-	fmt.Printf("%T",arr)
+	fmt.Printf("%T", arr)
 }
 
-func main(){
+func main03001() {
 	//arr:=[5]int{1,2,3,4,5}
 	//在定义时 叫元素个数
-	var arr [5]int=[5]int{1,2,3,4,5}
+	var arr [5]int = [5]int{1, 2, 3, 4, 5}
 	//在数组使用时叫下标 （0~len(arr)-1）
 	//arr[5]=100//数组下标越界
 	//arr[-1]=20//数组下标越界
@@ -74,7 +73,7 @@ func main(){
 	//数组是一个常量 不允许赋值 数组名代表整个数组
 	//arr=10//err
 	//数组名也可以表示数组的首地址
-	fmt.Printf("%p\n",&arr)
-	fmt.Printf("%p\n",&arr[0])
-	fmt.Printf("%p\n",&arr[1])
+	fmt.Printf("%p\n", &arr)
+	fmt.Printf("%p\n", &arr[0])
+	fmt.Printf("%p\n", &arr[1])
 }

@@ -2,8 +2,7 @@ package main
 
 import "fmt"
 
-func main0101() {
-
+func main02801() {
 
 	//a:=10
 	//b:=20
@@ -25,19 +24,19 @@ func main0101() {
 	//f()
 
 }
-func main(){
-	a:=10
-	b:=20
+func main02802() {
+	a := 10
+	b := 20
 	//匿名函数  带返回值的匿名函数
 	//v:=func(a int, b int)int{
 	//	return a+b
 	//}(a,b)
-	f:=func(a int, b int)int{
-			return a+b
+	f := func(a int, b int) int {
+		return a + b
 	}
 	//函数调用 f 函数类型  v 接收返回值  类型为int
-	v:=f(a,b)
-	fmt.Printf("%T",f)
+	v := f(a, b)
+	fmt.Printf("%T", f)
 
 	//func (){
 	//
@@ -47,5 +46,5 @@ func main(){
 	//}
 
 	fmt.Println(v)
-	fmt.Printf("%T",v)
+	fmt.Printf("%T", v)
 }
