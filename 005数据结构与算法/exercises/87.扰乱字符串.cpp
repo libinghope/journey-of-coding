@@ -89,6 +89,7 @@ S(0:i)~T(0:i) && S(i:end)~T(i:end)
 or S(0:i)~T(end-i:end) && S(end-i:end)~T(0:i)
  */
     bool isScramble(string s1, string s2) {
+        if(map_res.count(s1+s2)) return map_res[s1+s2];
         int len1 = s1.size();
         int len2 = s2.size();
         unordered_map<char,int> umap1,umap2;
@@ -106,15 +107,20 @@ or S(0:i)~T(end-i:end) && S(end-i:end)~T(0:i)
         for(int j=1;j<len1;++j){
             if(isScramble(s1.substr(0,j),s2.substr(0,j)) && 
             isScramble(s1.substr(j),s2.substr(j))){
+                map_res[s1+s2]=true;
                 return true;
             }
             if(isScramble(s1.substr(0,j),s2.substr(len1-j)) && 
             isScramble(s1.substr(j),s2.substr(0,len1-j))){
+                map_res[s1+s2]=true;
                 return true;
             }
         }
+        map_res[s1+s2]=false;
         return false;
     }
+    private:
+    unordered_map<string,bool>map_res;
 };
 // @lc code=end
 
