@@ -35,7 +35,7 @@
  * 输出: -1
  * 
  */
-
+#include<vector>
 // @lc code=start
 class Solution {
 public:
@@ -46,9 +46,31 @@ public:
     判断target的位置是a[0]-a[i],a[i+1]-a[len-1]哪个区间
     然后折半查找 时间复杂度还是log(n)
     总复杂度还是log(n)
+
+    一开始的想法是错误的，可以直接二分查找,只需要特殊处理一下就好
     */
     int search(vector<int>& nums, int target) {
-        
+        //二分查找
+        int start = 0,end = nums.size() - 1;
+        while(start<=end){
+            int mid = (start + end) >> 1;
+            if(target==nums[mid]) return mid;
+            if(nums[start] <= nums[mid]){  //左边升序
+                if(target >= nums[start] && target <= nums[mid]){//在左边范围内
+                    end = mid-1;
+                }else{//只能从右边找
+                    start = mid+1;
+                }
+
+            }else{ //右边升序
+                if(target >= nums[mid] && target <= nums[end]){//在右边范围内
+                    start = mid +1;
+                }else{//只能从左边找
+                    end = mid-1;
+                }
+            }
+        }
+    return -1;
     }
 };
 // @lc code=end

@@ -48,7 +48,9 @@
  * 
  * 
  */
-
+#include<vector>
+#include<string>
+using namespace std;
 // @lc code=start
 class Solution {
 public:
@@ -72,8 +74,36 @@ public:
     从上面三个问题来看，word1[0..i] 变换成 word2[0..j] 主要有三种手段，用哪个消耗少，就用哪个。
     */
     int minDistance(string word1, string word2) {
+        int len1 = word1.size();
+        int len2 = word2.size();
+        vector<vector<int>> dp(len1+1,vector<int>(len2+1,-1));
+
+        for (int i = 0; i <= len1; ++i) {
+            dp[i][0] = i;
+        }
+        for (int j = 0; j <= len2; ++j) {
+            dp[0][j] = j;
+        }
+        for(int i=1;i<=len1;++i){
+            for(int j=1;j<=len2;++j){
+                if(word1[i-1]==word2[j-1]){
+                    dp[i][j]=dp[i-1][j-1];
+                }else{
+                    dp[i][j]=min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+1);
+                }
+            }
+        }
         
+        return dp[len1][len2];
     }
+    int min(int a1,int a2,int a3){
+        int min = a1;
+        if(a2<min) min =a2;
+        if(a3<min) min =a3;
+
+        return min;
+    }
+
 };
 // @lc code=end
 
