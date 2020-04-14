@@ -35,9 +35,49 @@
 // @lc code=start
 class Solution {
 public:
-    int coinChange(vector<int>& coins, int amount) {
+
+    //算法2 动态规划
+    int coinChange1(vector<int>& coins, int amount) {
 
     }
+
+    /*
+    典型的多数之和，元素可以重复使用
+
+    方法1，带记忆的递归算法
+    */
+    int coinChange1(vector<int>& coins, int amount) {
+        if(coins.size()<=0 || amount<0) return -1;
+        if(amount==0) return 0;
+        //ret = INT_MAX;
+        //sort(coins.begin(),coins.end());
+        //vector<int> path;
+        memo = new int[amount]{0};
+        return findWay(coins,amount,0);
+        //return ret==INT_MAX ? -1 : ret;
+    }
+    int findWay(vector<int>& coins, int amount,int count){
+        //amount < 0说明无法兑换
+        if(amount<0) return -1;
+        //amount=0说明应该终止递归,可以理解为兑换0金额的钱需要0个coin
+        if(amount==0){
+            return 0;
+        }
+        if(memo[amount-1] != 0) return memo[amount-1];
+        int min = INT_MAX;
+        for(int i=0;i<coins.size();++i){
+            int res = findWay(coins,amount-coins[i],count+1);
+            if(res >=0 && res<min){
+                min = res + 1;//前面已经减去coins[i]了，这里要加上
+            }
+        }
+        memo[amount-1] = min == INT_MAX ? -1 : min;
+        return memo[amount-1];
+    }
+
+private:
+    //int ret;
+    int* memo;
 };
 // @lc code=end
 
