@@ -37,15 +37,43 @@ class Solution {
 public:
 
     //算法2 动态规划
-    int coinChange1(vector<int>& coins, int amount) {
+    int coinChange(vector<int>& coins, int amount) {
+        if(coins.size()<=0 || amount<0) return -1;
+        if(amount==0) return 0;
 
+        //int* dp = new int[amount+1]{-1};
+        vector<int> memo(amount+1,-1);
+        memo[0] = 0;
+        queue<int> queue;
+        for(int i=0;i<coins.size();++i){
+            if(coins[i]>amount)continue;
+            memo[coins[i]] = 1;
+            queue.push(coins[i]);
+        }
+        while(!queue.empty()){
+            int q = queue.front();
+            queue.pop();
+            bool flag = false;
+            for(int coin : coins){
+                if(q+coin > amount){
+                    continue;
+                }
+                if(memo[q]+1 < memo[q+coin] || memo[q+coin]==-1){
+                    memo[q+coin] = memo[q] + 1;
+                    queue.push(q+coin);
+                    if(q+coin == amount) return memo[amount];
+                }
+            }
+            if(memo[amount]!=-1) return memo[amount];
+        }
+        return memo[amount];
     }
 
     /*
     典型的多数之和，元素可以重复使用
 
     方法1，带记忆的递归算法
-    */
+    
     int coinChange1(vector<int>& coins, int amount) {
         if(coins.size()<=0 || amount<0) return -1;
         if(amount==0) return 0;
@@ -74,6 +102,7 @@ public:
         memo[amount-1] = min == INT_MAX ? -1 : min;
         return memo[amount-1];
     }
+    */
 
 private:
     //int ret;

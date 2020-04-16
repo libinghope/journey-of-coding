@@ -46,17 +46,59 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-    /*
-    1、暴力进行遍历求解
-
-    2、遍历二维网格，对每个单词生成，自己的相邻字母表   
-       例如 map[a] = {map['B']=true,map['S']=true}
-    */
     bool exist(vector<vector<char>>& board, string word) {
-        
+        int rows = board.size();
+        int cols = board[0].size();
+        unordered_map<string,bool> used(false);
+        for(int i=0;i<rows;++i){
+            for(int j=0;j<cols;++j){
+                if(board[i][j]==word[0]){
+                    bool r = DFS(board,word,i,j,0);
+                    if(r){
+                        return true;
+                    };
+                }
+            }
+        }
+        return false;
+    }
+    bool DFS(vector<vector<char>>& board, string word,int r,int c,int start){
+        if(start==word.size()-1) return true;
+
+        board[r][c] += 26;//打上标记，免得重复使用
+        //搜索上下左右
+        bool ans = false;
+        if(r>0){//可以上移
+            if(board[r-1][c]==word[start+1]){
+                ans = DFS(board,word,r-1,c,start+1);
+            }
+        }
+        if(ans) return true;
+
+        if(r<board.size()-1){//可以下移
+            if(board[r+1][c]==word[start+1]){
+                ans = DFS(board,word,r+1,c,start+1);
+            }
+        }
+        if(ans) return true;
+
+        if(c<board[0].size()-1){//可以右移
+            if(board[r][c+1]==word[start+1]){
+                ans = DFS(board,word,r,c+1,start+1);
+            }
+        }
+        if(ans) return true;
+
+        if(c>0){//可以左移
+            if(board[r][c-1]==word[start+1]){
+                ans = DFS(board,word,r,c-1,start+1);
+            }
+        }
+        board[r][c] -= 26;
+        return ans;
     }
 };
-// @lc code=end
-
+    // @lc code=end
