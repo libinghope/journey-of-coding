@@ -11,6 +11,8 @@ comments: false
   * [1.3 MAC系统的使用方法](/journey-of-coding/1.3)
   * [1.4 代码编辑工具vscode插件推荐](/journey-of-coding/1.4)
   * [1.5 搭建自己的git服务器](/journey-of-coding/1.5)
+  * [1.6 MAC下搭建vscode的go开发环境](/journey-of-coding/1.6)
+  * [1.7 开发环境问题备忘](/journey-of-coding/1.7)
 
 * [第二章 生产力工具之必备技能篇](/journey-of-coding/2.0)
   * [2.1 markdwon常用语法](/journey-of-coding/2.1)
@@ -91,3 +93,4 @@ comments: false
   * [5.39换联网技术架构模板：存储层技术](/journey-of-coding/5.39)
   * [5.40APP架构的演进](/journey-of-coding/5.40)
   * [5.41架构实战：架构设计文档模板](/journey-of-coding/5.41)
+  * [5.42如何高效学习开源项目](/journey-of-coding/5.42)
