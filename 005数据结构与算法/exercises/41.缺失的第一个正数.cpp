@@ -48,21 +48,26 @@ using namespace std;
 class Solution {
 public:
     /*方法思路
-    要求的解，必定位于[1，N+1],其中N为数组长度
+    要求的解，必定位于[1，N+1],其中N为数组长度 理解到这一点就好办了
     定义数组hash_tpl[N]={0},
     遍历数组，把n放在下标为n-1的位置(n<=0的抛弃掉)
     那么最终，hash_tpl中第一个等于0的位置就是要求的解
     */
     int firstMissingPositive(vector<int>& nums) {
-        int first = 1;
-        int cur_first = 1;
-        int hash_tpl[] = new int[nums.size()]{0};
+        if(nums.size()==0) return 1;
+        int size = nums.size();
+        vector<int> hash_tpl(size+1,0);
         for(int n : nums){
-            if(n>0){
+            if(n>0 && n<size+1){
                 hash_tpl[n-1] = n;
             }
         }
         //遍历hash_tpl找到第一个为0的数,很简单不再赘述
+        int i=0;
+        for(;i< hash_tpl.size();++i){
+            if(hash_tpl[i]==0) break;
+        }
+        return i+1;
     }
 };
 // @lc code=end
