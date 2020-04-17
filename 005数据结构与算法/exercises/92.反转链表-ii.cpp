@@ -36,7 +36,8 @@
  */
 class Solution {
 public:
-    /*前后双指针法，指针间隔为n-m*/
+    /*使用栈，把需要逆序的那一段入栈，栈顶和起始位置交换。
+    */
     ListNode* reverseBetween(ListNode* head, int m, int n) {
         
     }

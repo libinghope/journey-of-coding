@@ -45,13 +45,14 @@ public:
     bool canJump(vector<int>& nums) {
         int len = nums.size();
         int maxPos = 0;
-        for(int i=0;i<len;++i){
+        for(int i=0;i<len-1;++i){
+            if(maxPos<i) return false;
             int tmp = i+nums[i];
             if(maxPos<tmp){
                 maxPos = tmp;
             }
         }
-        return maxPos>=len;
+        return maxPos>=len-1;
     }
 };
 // @lc code=end

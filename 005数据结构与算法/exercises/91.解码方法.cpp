@@ -44,7 +44,7 @@ class Solution {
 public:
     /*读到题目的第一感觉是动态规划
     动态规划三步走
-    1、定义数组dp[i],表示长度为i的字符串的解码方法总数
+    1、定义数组dp[i],表示s的前i个字符组成的字符串的解码方法总数
     2、找出递推公式
         dp[1]=1
         dp[2]=2
@@ -53,7 +53,37 @@ public:
         需要注意的是，末位是0 只能和前面一个字符组合(10或20)
     */
     int numDecodings(string s) {
-        
+        if(s[0]=='0') return 0;
+        if(s.length()==1) return 1;
+        vector<int> dp(s.length(),0);
+        dp[0] = 1;
+
+        if(s[1]=='0'){
+            if('0'<s[0] && s[0]<'3') dp[1]=1;
+            else return dp[1] = 0;
+        }else{
+            if((s[0]=='1' && s[1]!='0') || (s[0]=='2' && '0'<s[1] && s[1]<'7')){
+                dp[1] = 2;
+            }else{
+                dp[1] = 1;
+            }
+        }
+        for(int i=2;i<s.size();++i){
+            if(s[i]=='0'){
+                if('0'<s[i-1] && s[i-1]<'3'){
+                    dp[i] = dp[i-2];
+                }else{
+                    dp[i] = 0;
+                }
+            }else if('0'<s[i-1] && s[i-1]<'3' && '0'<s[i] && s[i]< '7'){
+                dp[i] = dp[i-1] + dp[i-2];
+            }else if(s[i-1]=='1' && s[i]>= '7'){
+                dp[i] = dp[i-1] + dp[i-2];
+            }else{
+                dp[i] = dp[i-1];
+            }
+        }
+        return dp[s.length()-1];
     }
 };
 // @lc code=end
