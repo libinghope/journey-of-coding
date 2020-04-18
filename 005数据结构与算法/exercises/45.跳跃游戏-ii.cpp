@@ -39,49 +39,22 @@ class Solution {
 public:
     //贪心算法，每次尽可能跳的更远，直到能够跳到最后一个点
     int jump(vector<int>& nums){
-    int ans = 0;
-    int end = 0;
-    int maxPos = 0;
-    for (int i = 0; i < nums.size() - 1; i++)
-    {
-        maxPos = max(nums[i] + i, maxPos);
-        if (i == end)
+        int ans = 0;
+        int end = 0;
+        int maxPos = 0;
+        for (int i = 0; i < nums.size() - 1; i++)
         {
-            end = maxPos;
-            ans++;
-        }
-    }
-    return ans;
-    }
-    /*
-    分析，本质可以看做是一个有向带权图，从第0个到len-1节点的最短路径
-    这题的特殊之处在于每条边的权重都是1
-    这就转化成了，单源最短路径问题 nums[0]->nums[len-1]
-
-    可以采用迪杰斯特拉算法或者弗洛伊德算法，此处只计算从0点开始最短路径，
-    所以采用迪杰斯特拉算法(类似广度优先)更合适
-    */
-    int jump1(vector<int>& nums) {
-        int len = nums.size();
-        //定义邻接矩阵，并全部初始化为-1(表示不连通)
-        vector<vector<int> > matrix(len-1,vector<int>(len-1,-1));
-        int p[] = new int[len]{-1};//p[i]代表0到i的最短路径长度
-
-        //根据数组填充邻接矩阵
-        for(int i=0;i<len;++i){
-            for(int j=1;j<=nums[i];++j){
-                matrix[i][i+j] = 1;
+            maxPos = max(nums[i] + i, maxPos);
+            if (i == end)
+            {
+                end = maxPos;
+                ans++;
             }
         }
-        dijkstra(matrix,0,p);
-        int ret = p[len-1];
-        delete[] p;
-        p = NULL;
-        return ret;
+        return ans;
     }
-
-    void dijkstra(vector<vector<int> >&matrix,int v0, int *P){
-
+    int max(int x,int y){
+        return x > y ? x: y;
     }
 };
 // @lc code=end

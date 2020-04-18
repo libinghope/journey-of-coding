@@ -51,11 +51,13 @@
  * 
  * 
  */
-
+#include<vector>
+using namespace std;
 // @lc code=start
 class Solution {
 public:
     /*典型的动态规划问题,动态规划3步走
+
     1、定义数组 dp[i][j],含义是从左上角(0,0)到坐标(i,j)的路径数
     2、找到递推公式 
         很明显的dp[0][0]=1
@@ -66,7 +68,17 @@ public:
         dp[m-1][n-1]就是最后的结果
     */
     int uniquePaths(int m, int n) {
-        
+        vector<vector<int>> dp(m,vector(n,-1));
+        dp[0][0] = 0;
+        for(int j=0;j<n;++j) dp[0][j] = 1;
+        for(int i=0;i<m;++i) dp[i][0] = 1;
+
+        for(int i=1;i<m;++i){
+            for(int j=1;j<n;++j){
+                dp[i][j] = dp[i-1][j]+dp[i][j-1];
+            }
+        }
+        return dp[m-1][n-1];
     }
 };
 // @lc code=end

@@ -27,7 +27,8 @@
  * 输出: 6
  * 
  */
-
+#include<vector>
+using namespace std;
 // @lc code=start
 class Solution {
 public:
@@ -40,7 +41,52 @@ public:
     1的位置，就是高度
     */
     int maximalRectangle(vector<vector<char>>& matrix) {
-        
+        if(matrix.size()==0) return 0;
+        vector<int> heights;
+        int rows = matrix.size();
+        int max = 0;
+        for(int r=0;r<rows;++r){
+            heights.clear();
+            for(int i=0;i<matrix[0].size();++i){
+                if(matrix[r][i]=='0'){
+                    heights.push_back(0);
+                }else{
+                    //等于1的情况，向上计算总共多少个1
+                    int row = r-1;
+                    int h = 1;
+                    while(row > -1 && matrix[row][i]=='1'){
+                        --row;
+                        ++h;
+                    }
+                    heights.push_back(h);
+                }
+            }
+            int cur_large = largestRectangleArea(heights);
+            max = max>cur_large ? max : cur_large;
+        }
+        return max;
+    }
+
+        int largestRectangleArea(vector<int>& heights) {
+        stack<int> stack;
+        stack.push(-1);
+        int max_area = 0;
+        for(int i=0;i<heights.size();++i){
+            while(stack.top()!= -1 && heights[i] < heights[stack.top()]){
+                int cur_height = heights[stack.top()];
+                stack.pop();
+                int cur_area = cur_height * (i-stack.top()-1);
+                max_area = max_area>cur_area ? max_area : cur_area;
+            }
+            stack.push(i);
+        }
+        while(stack.top() != -1){
+            int cur_height = heights[stack.top()];
+            stack.pop();
+            int cur_area = cur_height * (heights.size()-stack.top()-1);
+            max_area = max_area>cur_area ? max_area : cur_area;
+        }
+        return max_area;
     }
 };
 // @lc code=end

@@ -44,36 +44,25 @@
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        if(matrix.size()==0) return false;
+        if(matrix[0].size()==0) return false;
         int rows = matrix.size();
         int cols = matrix[0].size();
-        int left =0;
-        int right = cols-1;
-        int mid_col = -1;
-        while(left<=right){
-            mid_col = (left+right) / 2;
-            if(matrix[0][mid_col]==target || (mid_col+1< cols && matrix[0][mid_col+1]==target)) return true;
-            if(matrix[0][mid_col]<target && matrix[0][mid_col+1]>target){
-                break;
-            }
-            if(matrix[0][mid_col]>target){
-                right = mid_col-1;
-            }
-            if(matrix[0][mid_col+1]<target){
-                left = mid_col+1;
-            }
-        }
-        if(left>right) return false;
-        int top =0;
+        if(matrix[0][0]> target || matrix[rows-1][cols-1]<target) return false;
+
+        int left = 0;
         int bottom = rows-1;
-        int mid_row = -1;
-        while(left<=right){
-            mid_row = (top+bottom) / 2;
-            if(matrix[mid_row][mid_col]==target) return true;
-            if(matrix[mid_row][mid_col]>target){
-                bottom = mid_row-1;
+
+        while(left< cols && bottom>-1){
+            if(matrix[bottom][left] == target){
+                return true;
             }
-            if(matrix[mid_row][mid_col]<target){
-                top = mid_col+1;
+            else if(matrix[bottom][left] > target){
+                //左下角大于target，排除当前最后一行
+                --bottom;
+            }else if(matrix[bottom][left] < target){
+                //左下角小于target,排除当前第一列
+                ++left;
             }
         }
         return false;
