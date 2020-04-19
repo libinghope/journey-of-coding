@@ -34,7 +34,9 @@
  * 
  * 
  */
-
+#include<unordered_map>
+#include<vector>
+using namespace std;
 // @lc code=start
 class Solution {
 public:
@@ -48,7 +50,57 @@ public:
     两者合起来O(n)=n 满足题意要求
     */
     vector<int> topKFrequent(vector<int>& nums, int k) {
+        vector<int> ret;
+        if(nums.empty()) return ret;
+        unordered_map<int,int> hash;
+        for(int i=0;i<nums.size();++i){
+            if(hash.count(nums[i])){
+                hash[nums[i]] = hash[nums[i]] + 1;
+            }else{
+                hash[nums[i]] = 1;
+            }
+        }
+        vector<pair<int,int> > maxHeap;
+        unordered_map<int,int>::iterator it = hash.begin();
 
+        for(;it!=hash.end();++it){
+            maxHeap.push_back(make_pair(it->first,it->second));
+        }
+        int c = maxHeap.size();
+        int parent = maxHeap.size() / 2 -1;
+        while (parent>=0)
+        {
+            adjustHeap(maxHeap,parent,maxHeap.size());
+            --parent;
+        }
+        //到这里已经调整成为大顶堆
+        int size = maxHeap.size();
+        ret.push_back(maxHeap[0].first);
+        while(ret.size()<k){
+            swap(maxHeap[0],maxHeap[size-1]);
+            adjustHeap(maxHeap,0,--size);
+            ret.push_back(maxHeap[0].first);
+        }
+        return ret;
+    }
+    void adjustHeap(vector<pair<int,int> >& maxHeap,int parent,int size){
+            while(parent * 2 + 1 < size){
+            int child = parent * 2 + 1;//左儿子
+            if(child+1 < size && maxHeap[child+1].second>maxHeap[child].second){
+                child++;//较大的子节点下标
+            }
+            if(maxHeap[parent].second < maxHeap[child].second){
+                swap(maxHeap[parent], maxHeap[child]);
+                parent = child;
+            }else break;
+        }
+
+    }
+
+    void swap(pair<int,int>& a,pair<int,int>& b){
+        pair<int,int> tmp = a;
+        a = b;
+        b = tmp;
     }
 };
 // @lc code=end

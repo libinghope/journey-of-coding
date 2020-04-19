@@ -30,7 +30,8 @@
  * 输出: [-1,-1]
  * 
  */
-
+#include<vector>
+using namespace std;
 // @lc code=start
 class Solution {
 public:
@@ -39,7 +40,37 @@ public:
     的下标
     */
     vector<int> searchRange(vector<int>& nums, int target) {
-        
+        int left = 0;
+        int right = nums.size()-1;
+        int start = -1;
+        int end = -1;
+        vector<int> ret;
+        while(left<=right){
+            int mid = (left + right) / 2;
+            if(nums[mid] == target){
+                //左右移动，找到开始和末尾
+                start = mid;
+                end = mid;
+                while(0<=start && nums[start] == target){
+                    --start;
+                }
+                start++;
+                while(end< nums.size() && nums[end] == target){
+                    ++end;
+                }
+                end--;
+                break;
+            }
+            if(nums[mid] > target){
+                right = mid - 1;
+            }
+            if(nums[mid] < target){
+                left = mid+1;
+            }
+        }
+        ret.push_back(start);
+        ret.push_back(end);
+        return ret;
     }
 };
 // @lc code=end

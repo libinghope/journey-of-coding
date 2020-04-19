@@ -65,9 +65,24 @@ public:
 
     二叉搜索树的中序遍历是一个递增的排序列表，搞定
     */
+public:
     bool isValidBST(TreeNode* root) {
-        
+        if(root){
+            isValidBST(root->left);
+            if(vec.empty()) vec.push_back(root);
+            else if(root->val > vec[vec.size()-1]->val){
+                vec.push_back(root);
+            }else{
+                ret = false;
+            }
+            isValidBST(root->right);
+        }
+        return ret;
     }
+private:
+    vector<TreeNode*> vec;
+    bool ret=true;
+
 };
 // @lc code=end
 
