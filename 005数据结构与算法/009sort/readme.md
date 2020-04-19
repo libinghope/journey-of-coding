@@ -36,7 +36,7 @@
 
 ## 7、选择排序
 
-![选择排序.gif](https://pic.downk.cc/item/5e9bc1b0c2a9a83be5a2aa5c.jpg)
+![选择排序.gif](https://pic.downk.cc/item/5e9bc385c2a9a83be5a4941a.gif)
 
 ## 8、计数排序
 
