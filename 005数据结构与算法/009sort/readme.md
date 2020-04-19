@@ -12,15 +12,15 @@
 
 ## 1、冒泡排序
 
-![冒泡排序.gif](https://pic.downk.cc/item/5e9bbe72c2a9a83be59f56da.gif
+![冒泡排序.gif](https://pic.downk.cc/item/5e9bbe72c2a9a83be59f56da.gif)
 
 ## 2、插入排序
 
-![插入排序.gif](https://pic.downk.cc/item/5e9bbe9bc2a9a83be59f8324.gif)
+![插入排序.gif](https://qqadapt.qpic.cn/txdocpic/0/91b76e8e4dab9b0cad9a017d7dd431e2/0?w=811&h=505)
 
 ## 3、希尔排序
 
-![希尔排序.gif](https://pic.downk.cc/item/5e9bbebdc2a9a83be59fb3f3.gif)
+![希尔排序.gif](https://p.pstatp.com/origin/ffbd00015ae0d1443ff1)
 
 ## 4、堆排序
 
@@ -36,7 +36,7 @@
 
 ## 7、选择排序
 
-![选择排序.gif](https://pic.downk.cc/item/5e9bbf77c2a9a83be5a06cc8.gif)
+![选择排序.gif](https://pic.downk.cc/item/5e9bc1b0c2a9a83be5a2aa5c.jpg)
 
 ## 8、计数排序
 
