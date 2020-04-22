@@ -51,6 +51,8 @@ public:
     /*看到题目的第一反应必定是二分法
     先对行进行二分，确定目标值范围所在行，
     再对列进行二分，确定目标值所在列
+
+    从左下角入手，一次排除一行或者一列
     */
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         

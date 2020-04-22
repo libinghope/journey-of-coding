@@ -34,13 +34,13 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    /*
+    /*滑动窗口法
     双指针法
     1、初始，leftleft指针和rightright指针都指向SS的第一个元素.
 
     2、将 rightright 指针右移，扩张窗口，直到得到一个可行窗口，亦即包含TT的全部字母的窗口。
 
-    3、得到可行的窗口后，将lefttleftt指针逐个右移，若得到的窗口依然可行，则更新最小窗口大小。
+    3、得到可行的窗口后，将lefttleftt指 针逐个右移，若得到的窗口依然可行，则更新最小窗口大小。
 
     4、若窗口不再可行，则跳转至 2。
     */

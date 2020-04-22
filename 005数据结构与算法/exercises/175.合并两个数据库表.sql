@@ -1,4 +1,4 @@
-SQL架构如下:
+/*SQL架构如下:
 
 表1: Person
 +-------------+---------+
@@ -25,8 +25,9 @@ AddressId 是上表主键
 编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：
 
 FirstName, LastName, City, State
+*/
+--主要就是考察内连接和外连接的用法，以及on和where的区别,sql语句如下:
 
-主要就是考察内连接和外连接的用法，以及on和where的区别,sql语句如下:
 select FirstName, LastName, City, State from Person left join Address 
 on Person.PersonId = Address.PersonId;
 

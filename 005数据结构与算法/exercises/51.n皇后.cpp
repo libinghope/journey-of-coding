@@ -47,35 +47,54 @@ using namespace std;
 // @lc code=start
 class Solution {
 public:
-    /*n皇后问题，典型的递归算法
-    DFS
-    */
+    /*思路 递归的一行一行的去测试不行就回溯*/
     vector<vector<string>> solveNQueens(int n) {
-        bool * used = new bool[n]{false};
-        vector<string> vec_str;
-        DFS(n,0,used,vec_str);
-        delete[] used;
-        return ret;
+        string line(n,'.');
+        solveNQueens(line,0,n);
+        return res;
     }
-    void DFS(int n,int row, bool used[],vector<string> vec_str){
-        if(row >= n)
-        {
-            ret.push_back(vec_str);
+private:
+    void solveNQueens(string& line,int row,int n){
+        if(matrix.size()==n){//满足条件
+            ret.push_back(matrix);
             return;
         }
-        string str(n,'.');
         for(int i=0;i<n;++i){
-            
-            if(!used[i]){
-                used[i] = true;
-                str[i] = 'Q';
+            if(check(row,i,n)){//符合条件
+                line[i] = 'Q';
+                matrix.push_back(line);
+                line[i] = '.';//进行下一行探测的准备，初始化为全[.]
+
+                solveNQueens(line,row+1,n);
+                //回溯的标准步骤，退回上一步
+                matrix.pop_back();
             }
         }
-        vec_str.push_back(str);
-        DFS(n,row+1,used,vec_str);
     }
-    private:
-    vector<vector<string> >  ret;
+    bool check(int row, int col,int n){
+        //检查每一行是否冲突，以(row,col)为交点的米字型检查
+        /*从下往上，依次为 row-1，row -2,直到第一行*/
+        for(int i=1;i<=row;++i){
+            //判断左上角是否冲突
+            if(col-i>=0 && matrix[row-i][col-i]=='Q'){
+                return false;
+            }
+            //判断右上角是否冲突
+            if(col+i>n && matrix[row-i][col+i]=='Q'){
+                return false;
+            }
+            //判断当前列是否冲突
+            if(matrix[row-i][col]=='Q'){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+private:
+    vector<vector<string>> ret;//存结果
+    vector<string> matrix;//存棋盘
 };
 // @lc code=end
 

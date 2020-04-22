@@ -1,4 +1,4 @@
-SQL架构
+/*SQL架构
 编写一个 SQL 查询来实现分数排名。
 
 如果两个分数相同，则两个分数排名（Rank）相同。请注意，平分后的下一个名次应该是下一个连续的整数值。换句话说，名次之间不应该有“间隔”。
@@ -25,8 +25,8 @@ SQL架构
 | 3.65  | 3    |
 | 3.50  | 4    |
 +-------+------+
-
-题解
+*/
+--题解:
 
 SELECT Score, (SELECT count(DISTINCT score) FROM Scores WHERE score >= s.score) AS Rank 
 FROM Scores s ORDER BY Score DESC ;

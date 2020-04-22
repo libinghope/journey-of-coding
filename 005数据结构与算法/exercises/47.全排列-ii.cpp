@@ -29,17 +29,39 @@
 
 // @lc code=start
 class Solution {
-public:
-    /*在前面的基础上，这次多了重复数字
-    去重的方法，首先将数组排序
-    sort(nums.begin(),nums.end());
-    然后for循环当中增加条件判断
-    if(i>0 && nums[i]==nums[i-1] && !used[i-1]) continue;
-    */
-
-    vector<vector<int>> permuteUnique(vector<int>& nums) {
-        
+ public:
+     vector<vector<int>> permuteUnique(vector<int>& nums){
+        res.clear();
+        if(nums.size()==0) return res;
+        used = vector<bool>(nums.size(),false);
+        sort(nums.begin(),nums.end());
+        vector<int> path;
+        generatePermutation(nums,path);
+        return res;
     }
+
+private:
+    void generatePermutation(vector<int>& nums,vector<int>&path){
+        if(path.size()==nums.size()){
+            res.push_back(path);
+            return;
+        }
+        for(int i=0;i<nums.size();++i){
+            if(used[i]) continue;
+            if(i>0 && nums[i]==nums[i-1] && !used[i-1]){
+                continue;
+            }
+            path.push_back(nums[i]);
+            used[i] = true;
+            generatePermutation(nums,path);
+
+            //回溯
+            path.pop_back();
+            used[i]=false;
+        }
+    }
+    vector<vector<int>>res;
+    vector<bool>used; 
 };
 // @lc code=end
 

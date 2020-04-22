@@ -1,5 +1,4 @@
-
-185. 部门工资前三高的所有员工
+/*部门工资前三高的所有员工
 SQL架构
 Employee 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。
 
@@ -39,7 +38,10 @@ Department 表包含公司所有部门的信息。
 IT 部门中，Max 获得了最高的工资，Randy 和 Joe 都拿到了第二高的工资，Will 的工资排第三。
 
 销售部门（Sales）只有两名员工，Henry 的工资最高，Sam 的工资排第二。
-//--------------------------------------------------------------
+*/
+
+--题解：
+
 SELECT
     d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
 FROM

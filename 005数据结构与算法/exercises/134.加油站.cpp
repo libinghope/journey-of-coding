@@ -68,13 +68,30 @@ class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
         int all_gas = 0;
+        int start = -1;
         for(int i=0;i<cost.size();++i){
-            //从第i个油站出发
-            all_gas += gas[i];
-            if(all_gas>=cost[i]){
-                all_gas-=cost[i];
-            }else continue;
+            if(canBack(i,gas,cost)){
+                return i;
+            }
         }
+        return -1;
+    }
+    bool canBack(int start,vector<int>& gas, vector<int>& cost){
+        int all_gas = 0;
+        int cur_pos=start;
+        while(cur_pos<gas.size()){
+            all_gas += gas[cur_pos];
+            if(all_gas >= cost[cur_pos]){
+                all_gas -= cost[cur_pos];//减掉消耗的油
+                cur_pos++;//向前走一步
+                if(cur_pos==gas.size())
+                    cur_pos=0;//从0开始继续
+            }else break;
+            if(cur_pos==start){
+                return true;
+            }
+        }
+        return false;
     }
 };
 // @lc code=end
