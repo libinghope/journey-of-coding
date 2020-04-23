@@ -1,5 +1,9 @@
+/*
+在cpp stl当中，set就是hashmap，只不过是key，value是同一个而已
+*/
 
-//用数组来表示set
+
+//用数组来表示set，以下是浙大公开课当中讲的内容
 typedef struct common_set{
     int data;
 

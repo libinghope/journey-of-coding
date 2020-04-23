@@ -2,7 +2,7 @@
 
 生命不息，coding不止......  
 
-记录自己的coding之旅和随笔  
+整理记录总结自己的技术栈，一点一滴地去积累，持续更新，配合blog记录自己学习的每一步。
 
 个人博客地址: [hexo-blog](https://libinghope.github.io/journey-of-coding/ "blog")  
   

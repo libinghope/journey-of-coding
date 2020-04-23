@@ -26,4 +26,4 @@ description:
 ![游戏角色类图](https://pic.downk.cc/item/5e8aa121504f4bcb04b45f14.jpg)
 
 代码详情见builder.cpp(C++实现)
-C++不支持反射，造成很多的不便，使用go重现实现一遍,见builder.go
+C++不支持反射，造成很多的不便。
