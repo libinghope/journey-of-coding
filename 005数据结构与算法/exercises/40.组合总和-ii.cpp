@@ -57,11 +57,28 @@ public:
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
         sort(candidates.begin(),candidates.end());
         
-        DFS(candidates,target,0);
+        int left = 0,right = candidates.size()-1;
+        int mid = 0;
+        if(candidates[0]> target) return ret;
+        if(candidates[candidates.size()-1]>=target) mid = candidates.size()-1;
+        else{
+            while(left<=right){
+                mid = (left+right) / 2;
+                if(candidates[mid]>target && candidates[mid-1]<=target){
+                    break;
+                }else if(candidates[mid]>target && candidates[mid-1]>target){
+                    right = mid-1;
+                }else if(candidates[mid]<target){
+                    left = mid+1;
+                }
+            }
+        }
+   
+        DFS(candidates,target,0,mid);
 
         return ret;
     }
-    void DFS(vector<int>& candidates,int target,int pos){
+    void DFS(vector<int>& candidates,int target,int start,int end){
         if(target==0){
             ret.push_back(path);
             return;
@@ -70,14 +87,15 @@ public:
             return;
         }
 
-        if(pos >= candidates.size()) return;
+        if(start > end) return;
+        for(int i=start;i<=end;++i){
+            if(i>start && candidates[i-1]==candidates[i]) continue;
+            path.push_back(candidates[i]);
+            DFS(candidates,target-candidates[i],i+1,end);
 
-        while(candidates[pos]==candidates[pos+1]) ++pos;//去重
-        path.push_back(candidates[pos]);
-        DFS(candidates, target - candidates[pos], pos+1);
-        path.pop_back();
+            path.pop_back();
+        }
 
-        DFS(candidates,target,pos+1);
 
     }
 

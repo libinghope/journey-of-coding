@@ -50,7 +50,7 @@ public:
     /*
     方法1、每次旋转1，旋转k次
 
-    方法2、依次交换第i个与i+k个结点，超过尾部从头开始
+    方法2、依次交换第i个与第(i+k)%size个结点，超过尾部从头开始
     */
     ListNode* rotateRight(ListNode* head, int k) {
         
