@@ -62,6 +62,7 @@ public:
         if(candidates[0]> target) return ret;
         if(candidates[candidates.size()-1]>=target) mid = candidates.size()-1;
         else{
+            //二分法，排除掉比target大的数
             while(left<=right){
                 mid = (left+right) / 2;
                 if(candidates[mid]>target && candidates[mid-1]<=target){
@@ -87,8 +88,8 @@ public:
             return;
         }
 
-        if(start > end) return;
         for(int i=start;i<=end;++i){
+            //过滤掉重复的情况
             if(i>start && candidates[i-1]==candidates[i]) continue;
             path.push_back(candidates[i]);
             DFS(candidates,target-candidates[i],i+1,end);
