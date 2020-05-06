@@ -21,6 +21,7 @@ comments: false
   * [2.4 google的正确使用方式](/journey-of-coding/2.4)
   * [2.5 正则表达式的使用方法](/journey-of-coding/2.5)
   * [2.6 mac下shell脚本编程](/journey-of-coding/2.6)
+  * [2.7 docker十分钟上手](/journey-of-coding/2.7)
 
 * [第三章 计算机操作系统](/journey-of-coding/3.0)
   * [3.1系统启动画面的背后](/journey-of-coding/3.1)
