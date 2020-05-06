@@ -39,10 +39,9 @@ public:
         vector<int> ret;
         if(nums.size()<=1) return ret;
         for(int n : nums){
-            if(-1==n) continue;
-            if(nums[n-1] == -1) ret.push_back(n);
+            if(nums[abs(n)-1] < 0) ret.push_back(abs(n));
             else{
-                nums[n-1] = -1;
+                nums[abs(n)-1] = -nums[abs(n)-1];
             } 
         }
         return ret;
