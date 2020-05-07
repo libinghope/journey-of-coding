@@ -1,5 +1,5 @@
-#ifndef __LINKED_LIST_H__
-#define __LINKED_LIST_H__
+#ifndef __LINKED_LIST_HPP__
+#define __LINKED_LIST_HPP__
 
 template <typename T>
 class LinkedListNode

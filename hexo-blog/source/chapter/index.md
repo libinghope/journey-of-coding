@@ -96,4 +96,4 @@ comments: false
   * [5.41架构实战：架构设计文档模板](/journey-of-coding/5.41)
   * [5.42如何高效学习开源项目](/journey-of-coding/5.42)
 * [第六章 linux网络](/journey-of-coding/6.0)
-  * [6.1计算机网络基础知识](/journey-of-coding/6.1)
+  * [6.1计算机网络基础知识1](/journey-of-coding/6.1)
