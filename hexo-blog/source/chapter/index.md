@@ -97,3 +97,5 @@ comments: false
   * [5.42如何高效学习开源项目](/journey-of-coding/5.42)
 * [第六章 linux网络](/journey-of-coding/6.0)
   * [6.1计算机网络基础知识1](/journey-of-coding/6.1)
+  * [6.22计算机网络基础知识2](/journey-of-coding/6.2)
+  * [6.3Socket编程基础](/journey-of-coding/6.3)

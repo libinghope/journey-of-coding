@@ -1,5 +1,5 @@
-#ifndef __ARRAY_LIST_H__
-#define __ARRAY_LIST_H__
+#ifndef __ARRAY_LIST_HPP__
+#define __ARRAY_LIST_HPP__
 
 // C++实现类似java中的ArrayList
 #include <string.h>
