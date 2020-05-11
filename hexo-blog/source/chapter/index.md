@@ -100,3 +100,5 @@ comments: false
   * [6.1计算机网络基础知识1](/journey-of-coding/6.1)
   * [6.22计算机网络基础知识2](/journey-of-coding/6.2)
   * [6.3Socket编程基础](/journey-of-coding/6.3)
+  * [6.4linux多进程并发服务器](/journey-of-coding/6.4)
+  * [6.5linux多线程并发服务器](/journey-of-coding/6.5)
