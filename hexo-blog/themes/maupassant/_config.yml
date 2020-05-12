@@ -88,8 +88,8 @@ widgets: ## Six widgets in sidebar provided: search, category, tag, recent_posts
   - links
 
 links:
-  - title: 友情链接1
-    url: \#
+  - title: 网盘搜索
+    url: wangpansearch.com
   - title: 友情链接2
     url: \#
   - title: 友情链接3
