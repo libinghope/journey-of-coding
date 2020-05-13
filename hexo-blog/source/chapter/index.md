@@ -113,3 +113,6 @@ comments: false
   * [6.14多路IO转接服务器之epoll](/journey-of-coding/6.14)
   * [6.15UDP协议的使用](/journey-of-coding/6.15)
   * [6.16Socket IPC 本地套接字](/journey-of-coding/6.16)
+* [第七章 数据中台](/journey-of-coding/7.0)
+  * [7.1中台的来龙去脉](/journey-of-coding/7.1)
+  * [7.2当前业界不同种类的中台](/journey-of-coding/7.2)
