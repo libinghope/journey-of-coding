@@ -36,17 +36,29 @@ echo "hexo deploy finished......"
 echo "everything is ok......"
 !
 
-echo "coping web static file······"
+echo "coping markdown files to gh-pages······"
 cd ..
-rm -r ../blog/*
-\cp -R ./hexo-blog/public/* ../blog
-echo "finished copying static file"
-cd ../blog
+rm -r ../gh-pages/*
+\cp -R ./hexo-blog/source/_posts/* ../gh-pages
+echo "finished copying markdown files"
+cd ../gh-pages
 
-echo "git push origin gh-pages......"
+echo "git push blog origin master......"
 git add -A
 git commit -m "$message"
-git push -f origin gh-pages
+git push -f origin master
+
+echo "coping web static files······"
+cd ../journey-of-coding
+rm -r ../blog/*
+\cp -R ./hexo-blog/public/* ../blog
+echo "finished copying static files"
+cd ../blog
+
+echo "git push origin master......"
+git add -A
+git commit -m "$message"
+git push -f origin master
 
 echo "publish blog success. Go and to see your website."
 fi
