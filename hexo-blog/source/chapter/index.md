@@ -118,3 +118,5 @@ comments: false
   * [7.2当前业界不同种类的中台](/journey-of-coding/7.2)
   * [7.3当我们说中台时到底在说什么](/journey-of-coding/7.3)
   * [7.4建设中台前必须想清楚的四个问题](/journey-of-coding/7.4)
+  * [7.5中台规划建设方法论概述](/journey-of-coding/7.4)
+  * [7.6中台落地第一步：企业战略分解及现状调研](/journey-of-coding/7.4)
