@@ -116,3 +116,5 @@ comments: false
 * [第七章 数据中台](/journey-of-coding/7.0)
   * [7.1中台的来龙去脉](/journey-of-coding/7.1)
   * [7.2当前业界不同种类的中台](/journey-of-coding/7.2)
+  * [7.3当我们说中台时到底在说什么](/journey-of-coding/7.3)
+  * [7.4建设中台前必须想清楚的四个问题](/journey-of-coding/7.4)
