@@ -48,7 +48,7 @@ canvas_nest:
   zIndex: ## The z-index property of the background, e.g. "-1"
   count: ## Quantity of lines, e.g. "150"
 path:
-  root: /journey-of-coding #github自定义仓库名字(非账号名仓库)的时候会出错
+  root: /libinghope/ #github自定义仓库名字(非账号名仓库)的时候会出错
 donate:
   enable: true ## If you want to display the donate button after each post, please set the value to true and fill the following items on your need. You can also enable donate button in a page by adding a "donate: true" item to the front-matter.
   github: ## GitHub URL, e.g. https://github.com/Kaiyuan/donate-page
