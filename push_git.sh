@@ -46,7 +46,7 @@ cd ../gh-pages
 echo "git push blog origin master......"
 git add -A
 git commit -m "$message"
-git push -f origin master
+git push -f origin gh-pages
 
 echo "coping web static files······"
 cd ../journey-of-coding
