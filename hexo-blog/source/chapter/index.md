@@ -121,3 +121,8 @@ comments: false
   * [7.5中台规划建设方法论概述](/journey-of-coding/7.5)
   * [7.6中台落地第一步：企业战略分解及现状调研](/journey-of-coding/7.6)
   * [7.7中台落地第二步：企业数字化全景规划](/journey-of-coding/7.7)
+* [第八章 从0开始学微服务](/journey-of-coding/8.0)
+  * [8.1到底什么是微服务](/journey-of-coding/8.1)
+  * [8.2从单体应用到服务化](/journey-of-coding/8.2)
+  * [8.3初探微服务架构](/journey-of-coding/8.3)
+  * [8.4如何发布和引用服务](/journey-of-coding/8.4)
