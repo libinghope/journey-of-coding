@@ -1,0 +1,22 @@
+syntax = "proto3";//使用proto3版本
+
+//包位置
+option go_package = "./";
+
+package helloGRPC;
+
+// 定义服务端方法
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 请求消息,发送用户名
+message HelloRequest {
+  string name = 1;
+}
+
+// 回复消息
+message HelloReply {
+  string message = 1;
+}

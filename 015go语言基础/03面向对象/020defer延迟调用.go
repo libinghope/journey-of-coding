@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func main0301() {
-	fmt.Println("传智播客")
-	defer fmt.Println("IT培训")
+	fmt.Println("11111")
+	defer fmt.Println("2222")
 	//defer 函数调用
-	defer fmt.Println("日薪越亿")
-	fmt.Println("高薪就业")
+	defer fmt.Println("33333")
+	fmt.Println("44444")
 }
 
 func test4() {
@@ -43,14 +43,13 @@ func main() {
 	//}
 
 	//f(a,b)
-	defer func(a int , b int) {
+	defer func(a int, b int) {
 		fmt.Println(a)
 		fmt.Println(b)
-	}(a,b)
+	}(a, b)
 
 	a = 100
 	b = 200
-
 
 	fmt.Println(a)
 	fmt.Println(b)

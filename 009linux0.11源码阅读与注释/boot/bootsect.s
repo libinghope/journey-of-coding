@@ -25,7 +25,7 @@
 # loads pretty fast by getting whole sectors at a time whenever possible.
 
 
-# bootsect.s已经在操作系统课程中有注释过(https://libinghope.github.io/journey-of-coding/3.1)
+# bootsect.s已经在操作系统课程中有注释过(https://libinghope.github.io/libinghope/3.1)
 
     .global _start, begtext, begdata, begbss, endtext, enddata, endbss
     .text
