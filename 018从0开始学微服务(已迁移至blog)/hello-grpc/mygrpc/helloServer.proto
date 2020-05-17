@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mygrpc;
+
+// define a service
+service HelloWorldService {
+    // define the interface and data type
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// define the data type of request
+message HelloRequest {
+    string name = 1;
+}
+
+// define the data type of response
+message HelloReply {
+    string message = 1;
+}
