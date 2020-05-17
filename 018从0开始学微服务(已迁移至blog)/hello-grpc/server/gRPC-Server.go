@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	pt "hello-grpc/mygrpc"
 	"net"
-	pt "server/mygrpc"
 
 	"google.golang.org/grpc"
 )

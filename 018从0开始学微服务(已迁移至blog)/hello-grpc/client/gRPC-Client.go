@@ -1,9 +1,9 @@
 package main
 
 import (
-	pt "client/mygrpc"
 	"context"
 	"fmt"
+	pt "hello-grpc/mygrpc"
 
 	"google.golang.org/grpc"
 )
