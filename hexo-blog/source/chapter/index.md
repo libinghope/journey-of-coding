@@ -134,3 +134,4 @@ comments: false
   * [8.10Dubbo框架里的微服务组](/libinghope/8.10)
   * [8.11gRPC初步认识](/libinghope/8.11)
   * [8.12gRPC与consul配合使用](/libinghope/8.12)
+  * [8.13kubernets初步认识](/libinghope/8.13)
