@@ -134,4 +134,5 @@ comments: false
   * [8.10Dubbo框架里的微服务组](/libinghope/8.10)
   * [8.11gRPC初步认识](/libinghope/8.11)
   * [8.12gRPC与consul配合使用](/libinghope/8.12)
-  * [8.13kubernets初步认识并搭建集群](/libinghope/8.13)
+  * [8.13kubernets(k8s)初步认识并搭建集群](/libinghope/8.13)
+  * [8.14kubernets(k8s)搭建mysql集群实例](/libinghope/8.14)
