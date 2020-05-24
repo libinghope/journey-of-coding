@@ -120,6 +120,7 @@ comments: false
   * [7.5 中台规划建设方法论概述](/libinghope/7.5)
   * [7.6 中台落地第一步：企业战略分解及现状调研](/libinghope/7.6)
   * [7.7 中台落地第二步：企业数字化全景规划](/libinghope/7.7)
+  * [7.8 中台落地第二步：企业数字化全景规划](/libinghope/7.8)
 * [第八章 从0开始学微服务](/libinghope/8.0)
   * [8.1 到底什么是微服务](/libinghope/8.1)
   * [8.2 从单体应用到服务化](/libinghope/8.2)
@@ -136,3 +137,4 @@ comments: false
   * [8.13 kubernets(k8s)初步认识并搭建集群](/libinghope/8.13)
   * [8.14 kubernets(k8s)搭建mysql集群实例](/libinghope/8.14)
   * [8.15 开源服务注册中心如何选型](/libinghope/8.15)
+  * [8.16 开源RPC如何选型](/libinghope/8.16)
