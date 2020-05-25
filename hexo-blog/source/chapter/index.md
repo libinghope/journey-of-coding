@@ -122,6 +122,7 @@ comments: false
   * [7.7 中台落地第二步：企业数字化全景规划](/libinghope/7.7)
   * [7.8 中台落地第三步：中台的规划与设计](/libinghope/7.8)
   * [7.9 中台落地第四步：中台的建设与接入](/libinghope/7.9)
+  * [7.9 中台落地工具资源汇总](/libinghope/7.9)
 * [第八章 从0开始学微服务](/libinghope/8.0)
   * [8.1 到底什么是微服务](/libinghope/8.1)
   * [8.2 从单体应用到服务化](/libinghope/8.2)
@@ -140,3 +141,4 @@ comments: false
   * [8.15 开源服务注册中心如何选型](/libinghope/8.15)
   * [8.16 开源RPC如何选型](/libinghope/8.16)
   * [8.17 如何搭建一个可靠的监控系统](/libinghope/8.17)
+  * [8.18 如何搭建一套适合你的服务跟踪系统](/libinghope/8.18)
