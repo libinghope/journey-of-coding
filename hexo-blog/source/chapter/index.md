@@ -142,3 +142,4 @@ comments: false
   * [8.16 开源RPC如何选型](/libinghope/8.16)
   * [8.17 如何搭建一个可靠的监控系统](/libinghope/8.17)
   * [8.18 如何搭建一套适合你的服务跟踪系统](/libinghope/8.18)
+  * [8.19 如何识别服务节点是否存活](/libinghope/8.19)
