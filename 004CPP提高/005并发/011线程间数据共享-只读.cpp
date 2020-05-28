@@ -3,12 +3,15 @@
 #include<vector>
 using namespace std;
 
+int a[3]{1,2,3};
 //线程入口函数
 void myPrint(int num) {
     cout<< "thread编号: "<<num<<" 开始执行"<<endl;
     //--------
     //do something
     //--------
+    //只对数据进行读操作
+    cout<<"|||||------------thread编号:"<<num<<a[0]<<a[1]<<a[2]<<endl;
 
     cout<< "thread编号: "<<num<<" 执行结束"<<endl;
 }
