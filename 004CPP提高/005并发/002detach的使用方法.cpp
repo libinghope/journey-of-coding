@@ -18,7 +18,7 @@ int main() {
 
     //myThread.join(); //意思是 主线程和子线程汇合，主线程阻塞等待子线程执行完毕,然后主线程继续执行
     //myThread.detach();//detach:直接翻译是分离的意思  主线程不等待子线程,一旦调用过detach就不能再调用join
-    if(myThread.joinable()){
+    if(myThread.joinable()){//joinable 用来判断一个线程是否还可以join或detach
         cout<<"joinable == true"<<endl;
         myThread.join();
     }else{
