@@ -28,14 +28,28 @@
 // @lc code=start
 
  //* Definition for singly-linked list.
-//  struct ListNode {
-//      int val;
-//      ListNode *next;
-//      ListNode(int x) : val(x), next(NULL) {}
-//  };
+ struct ListNode {
+     int val;
+     ListNode *next;
+     ListNode(int x) : val(x), next(NULL) {}
+ };
  
 class Solution {
 public:
+    ListNode* reverseList2(ListNode* head){
+        if(!head || !head->next) return head;
+        ListNode* p,q,r;
+        p = head;
+        q = p->next;
+        p->next = nullptr;
+        while(q){
+            r = q->next;
+            q->next = p;
+            p = q;
+            q = r;
+        }
+        return p;
+    }
     ListNode* reverseList(ListNode* head){
         if(!head || !head->next) return head;
         ListNode* tmp = reverseList(head->next);
