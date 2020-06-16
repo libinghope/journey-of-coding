@@ -39,7 +39,7 @@ echo "everything is ok......"
 echo "coping markdown files to gh-pages······"
 cd ..
 rm -r ../gh-pages/*
-\cp -R ./hexo-blog/source/_posts/* ../gh-pages
+\cp -R ./hexo-blog/source/_posts/* ../blog
 echo "finished copying markdown files"
 cd ../gh-pages
 
