@@ -25,6 +25,7 @@ echo "hexo-blog building......"
 hexo g
 echo "hexo-blog has builded successfully."
 
+cd ..
 echo "coping web static files······"
 cd ../journey-of-coding
 rm -r ../blog/*
