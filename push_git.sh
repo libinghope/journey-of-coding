@@ -24,29 +24,6 @@ echo "clean task is over......"
 echo "hexo-blog building......"
 hexo g
 echo "hexo-blog has builded successfully."
-:<<!  
-hexo自带的hexo-deployer-git还要申请TOKEN,蠢得要死,不用了
-echo "hexo cleaning......"
-Run hexo clean 
-echo "hexo clean finished......"
-
-echo "hexo deploying......"
-hexo deploy
-echo "hexo deploy finished......"
-echo "everything is ok......"
-!
-
-echo "coping markdown files to gh-pages······"
-cd ..
-rm -r ../gh-pages/*
-\cp -R ./hexo-blog/source/_posts/* ../blog
-echo "finished copying markdown files"
-cd ../gh-pages
-
-echo "git push blog origin master......"
-git add -A
-git commit -m "$message"
-git push -f origin gh-pages
 
 echo "coping web static files······"
 cd ../journey-of-coding
