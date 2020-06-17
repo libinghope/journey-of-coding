@@ -145,3 +145,5 @@ comments: false
   * [8.19 如何识别服务节点是否存活](/libinghope/8.19)
   * [8.20 如何使用负载均衡算法](/libinghope/8.20)
   * [8.21 如何使用服务路由](/libinghope/8.21)
+* [第九章 编程知识细节汇总](/libinghope/9.0)
+  * [9.1 python和c相互调用](/libinghope/9.1)
