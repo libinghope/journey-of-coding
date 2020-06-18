@@ -14,3 +14,4 @@ hexo-blog/public
 hexo-blog/deploy*
 *.dSYM
 **/out
+*.out
