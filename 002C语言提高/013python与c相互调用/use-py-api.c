@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+//clang use-py-api.c -L /Users/bing/docker-volumes/centos/data/kinginx/python_env/lib/pkgconfig -lpython3.5m.pc -I /Library/Frameworks/Python.framework/Versions/3.5/include/python3.5m
 int main()
 {
     Py_Initialize();
