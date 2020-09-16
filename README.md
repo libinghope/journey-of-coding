@@ -1,4 +1,7 @@
 # journey-of-coding
+<font color=#FF0000 >搬迁到码云，此处不再更新...</font>
+<font color=#FF0000 >搬迁到码云，此处不再更新...</font>
+<font color=#FF0000 >搬迁到码云，此处不再更新...</font>
 
 生命不息，coding不止......  
 
