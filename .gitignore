@@ -15,3 +15,4 @@ hexo-blog/deploy*
 *.dSYM
 **/out
 *.out
+.win_env
