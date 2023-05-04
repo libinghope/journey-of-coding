@@ -1,0 +1,3 @@
+[submodule "hexo"]
+	path = hexo
+	url = git@github.com:libinghope/blog.git
